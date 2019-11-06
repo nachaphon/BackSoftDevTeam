@@ -1,0 +1,19 @@
+คำสั่งสร้าง virtual env
+-->> virtualenv ชื่อProject
+
+คำสั่งเข้าใช้งาน virtual env
+-->> Scripts\activate
+
+ออกจาก virtual env
+-->> Script\deactivate.bat
+
+ดูว่าใน library มีอะไร
+-->> pip freeze
+
+สร้าง dajngo project
+-->> python .\Scripts\django-admin.py startproject AwesomeApp
+
+
+
+
+

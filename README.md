@@ -1,6 +1,6 @@
 # BackSoftDevTeam
  Back-end and database
 
-redtfyguhijokl.;'
-fdsfdsfsdf
-ddddd
+Function ที่ต้องสร้าง
+1
+2

@@ -11,6 +11,7 @@ from django.http import HttpResponse
 class HomePageView(TemplateView):
     def get(self,request,**kwargs):
         return render(request, 'index.html', context=None)
+
 def index(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -24,7 +25,8 @@ def index(request):
         }
         template = loader.get_template('result.html')
 
-        return HttpResponse(template.render(context,request))
+        # return HttpResponse(template.render(context,request))
+        return render(request, 'result.html',context )
 
     else :
             #if post request is not true

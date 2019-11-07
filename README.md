@@ -1,8 +1,8 @@
 # BackSoftDevTeam
  Back-end and database
 ## SuperUser
-<p> ID: MRBS <br>
-<p> PS: 123454321 <br> 
+- ID: MRBS 
+- PS: 123454321  
 ### Function
 1. 111
 2. 222

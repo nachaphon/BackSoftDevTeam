@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'HOME',
-    'USER',
-    'ADMIN',
-    'job_test'
+    ############################# 
+    'ADMIN.apps.AdminConfig',
+    'HOME.apps.HomeConfig',
+    'USER.apps.UserConfig',
+    'job_test.apps.JobTestConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'MRBS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['job_test/template/'],
+        'DIRS': ['job_test/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

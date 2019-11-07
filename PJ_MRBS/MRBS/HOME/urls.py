@@ -19,6 +19,6 @@ from django.conf.urls import url
 from HOME import views
 
 urlpatterns = [
-    path('page', views.show_home),
+    path('page/', views.show_home),
 
 ]

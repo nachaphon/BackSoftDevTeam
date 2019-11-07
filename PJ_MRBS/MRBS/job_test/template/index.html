@@ -23,8 +23,15 @@
                     </tr>
                     <tr>
                         <td><button>Submit</button></td>
-                        
                     </tr>
+                    <tr>
+                        {% for i in ap %}
+                        <td> {{ i.name }}  {{ i.cat }}</td>
+                        {% endfor %}
+                       
+                    </tr>
+                    
+                    
             </table>
 
         </form>

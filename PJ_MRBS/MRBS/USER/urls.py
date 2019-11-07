@@ -19,6 +19,6 @@ from django.conf.urls import url
 from USER import views
 
 urlpatterns = [
-    path('page', views.show_user),
+    path('page/', views.show_user),
 
 ]

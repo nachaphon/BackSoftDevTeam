@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ทดสอบรับข้อมูลจากฟอร์ม</title>
+    </head>
+    <body>
+        <h2>Django Form</h2>
+        <form method="post" action="/result/">
+            <table>
+                    <tr>
+                            <td>Enter your name: </td>
+                            <td><strong>{{ name }}</strong></td>
+            
+                    </tr>
+                    <tr>
+                        <td>Enter your email:</td>
+                        <td><strong>{{ email }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Enter your phone:</td>
+                        <td><strong>{{ phone }}</strong></td>
+                    </tr>
+                    <td><a href="/">ย้อนกลับ</a></td>
+            </table>
+
+        </form>
+    </body>
+</html>

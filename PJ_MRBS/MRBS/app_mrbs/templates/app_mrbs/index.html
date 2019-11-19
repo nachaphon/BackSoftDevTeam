@@ -27,6 +27,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">Login</button>
+<!-- <button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginfailModal">Login1</button> -->
         </form>
       </div>
   </nav>
@@ -40,8 +41,7 @@
   	<div class="container botton">
   	  <div class="row">
   	    <div class="col-xl-3">
-			<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FBangkok" width="100%" height="90" frameborder="0" seamless>
-			</iframe>
+			<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FBangkok" width="100%" height="90" frameborder="0"></iframe>
 			<div id="calendar">
     <div class="col-xl-12" id="calendar_header"><i class="icon-chevron-left"></i><h1></h1><i class="icon-chevron-right"></i>         </div>
     <div id="calendar_weekdays"></div>
@@ -57,15 +57,15 @@
 <th class="text-center month_header bg-warning" colspan="7">November&nbsp;2019</th>
 </tr>
 
-<tr>
+<tr class="table-warning">
 <th class="day_header"><strong>Time</strong></th><th class="day_header">8:30-9:00</th><th class="day_header">9:00-9:30</th><th class="day_header">9:30-10:00</th><th class="day_header">10:00- 10:30</th><th class="day_header">10:30-11:00</th><th class="day_header">11:00-11:30</th>
 
 
 <tr>
-<td><strong>Room A</strong><br>  <div class="day_booking"></div>                                
-              </td><td>
+  <td  data-toggle="modal" data-target="#EquipmentModal" style="cursor:pointer"><strong>Room A</strong><br></td>
+	<td>
                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                           
-                                </td><td>
+              </td><td>
                                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                 
                                 </td><td>
                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
@@ -79,10 +79,10 @@
 </tr>
 
 <tr>
-<td><strong>Room B</strong><br>  <div class="day_booking"></div>                                
-                                </td><td>
+<td  data-toggle="modal" data-target="#EquipmentModal" style="cursor:pointer"><strong>Room B</strong><br></td>
+	<td>
                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
-                                </td><td>
+              </td><td>
                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                              
                                 </td><td>
                                      <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
@@ -96,10 +96,10 @@
 </tr>
 
 <tr>
-<td><strong>Room C</strong><br>  <div class="day_booking"></div>                                
-                                </td><td>
+<td  data-toggle="modal" data-target="#EquipmentModal" style="cursor:pointer"><strong>Room C</strong><br></td>
+	<td>
                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
-                                </td><td> 
+              </td><td> 
                                    <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
                                 </td><td>
                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                           
@@ -113,8 +113,7 @@
 </tr>
 
 <tr>
-<td><strong>Room D</strong><br>  <div class="day_booking"></div>                                
-                                </td><td>
+<td  data-toggle="modal" data-target="#EquipmentModal" style="cursor:pointer"><strong>Room D</strong><br></td><td>
                                      <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
                                 </td><td>
                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                 
@@ -161,7 +160,7 @@
                 
 			
 			<div class="modal-body">
-				<form action="/examples/actions/confirmation.php" method="POST"> {% csrf_token %}
+				<form action="/user/" method="POST"> {% csrf_token %}
 					<div class="form-group">
 						<input type="text" class="form-control" name="id" placeholder="Student ID" required="required">		
 					</div>
@@ -200,4 +199,51 @@
 	</div>
 </div>
 
+
+<div id="LoginfailModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-login modelCenter">
+		<div class="modal-content col-xl-12">
+				<h2 align="center" class="modal-title">User or Password incorrect<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2>
+        
+			<div class="modal-body">
+				<form action="/examples/actions/confirmation.php" method="post">
+					<div class="form-group">
+						<input type="text" class="form-control" name="id" placeholder="Student ID" required="required">		
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+					</div>        
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</html>
+
+
+<div id="EquipmentModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-login modelCenter">
+		<div class="modal-content col-xl-12">
+				<h2 align="center" class="modal-title">Equipment<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2>
+                
+		  <div class="modal-body"	>
+			  <div class="row">
+  <div class="col-xl-6"><strong>Pen</strong></div>
+  <div class="col-xl-6"><img src={% static "app_mrbs/pen (2)_0.png" %} alt="Pen" style="width:50 px;height:50px;"></div>
+</div>
+		<div class="row">
+  <div class="col-xl-6"><strong>Projector</strong></div>
+  <div class="col-xl-6"><img src={% static "app_mrbs/projector.png" %} alt="Pen" style="width:50 px;height:50px;"></div>
+</div>
+		<div class="row">
+  <div class="col-xl-6"><strong>Whiteboard</strong></div>
+  <div class="col-xl-6"><img src={% static "app_mrbs/presentation.png" %} alt="Pen" style="width:50 px;height:50px;"></div>
+</div>
+		</div>
+  </div>
+</div>
+</div>
 </html>

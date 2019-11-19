@@ -1,0 +1,3 @@
+{% load static %} // จะใช้รูป
+
+{% static 'app_mrbs/ ชื่อ.jpg' %}  // เอาไปใช้

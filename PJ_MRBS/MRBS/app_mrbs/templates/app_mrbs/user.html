@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MRBS</title>
     <!-- Bootstrap -->
-	<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
-	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
-	<link rel="stylesheet" href="css/style.css">
+        <link href={% static 'css/bootstrap-4.3.1.css' %} rel="stylesheet">
+        <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+        <link rel="stylesheet" href={% static 'css/style.css' %}>
 	  
 	  
   </head>
@@ -29,7 +30,7 @@
         </form>
       </div>
   </nav>
-	  <img src="images/Header2.jpg" class="img-fluid" alt="Placeholder image">
+	<img src={% static 'app_mrbs/Header2.jpg' %} class="img-fluid" alt="Placeholder image">
 <!--	  <marquee>บ่เสร็จ</marquee>-->
 <!--<div class="container center"> </div>-->
 	  
@@ -157,11 +158,11 @@
 	 </div>
 	  
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src={% static "js/jquery-3.3.1.min.js" %}></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/popper.min.js"></script> 
-  <script src="js/bootstrap-4.3.1.js"></script>
+  <script src={% static "js/popper.min.js" %}></script> 
+  <script src={% static "js/bootstrap-4.3.1.js" %}></script>
 		<!--SET CENTER LOGIN-->
 	<style>
 		.modelCenter{
@@ -172,7 +173,7 @@
 	</style>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
+    <script src={% static "js/index.js"%}></script>
   </body>
 
 <div id="myModal" class="modal fade" role="dialog">

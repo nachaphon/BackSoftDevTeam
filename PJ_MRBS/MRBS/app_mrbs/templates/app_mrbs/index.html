@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MRBS</title>
+    <!-- Bootstrap -->
+	<link href={% static 'css/bootstrap-4.3.1.css' %} rel="stylesheet">
+	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+	<link rel="stylesheet" href={% static 'css/style.css' %}>
+	  
+	  
+  </head>
+  <body>
+<!--<div class="container header">-->
+  <head>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">MRBS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">Login</button>
+        </form>
+      </div>
+  </nav>
+    <!-- <img src="images/Header2.jpg" class="img-fluid" alt="Placeholder image"> -->
+    <img src={% static 'app_mrbs/Header2.jpg' %} class="img-fluid" alt="Placeholder image">
+<!--	  <marquee>บ่เสร็จ</marquee>-->
+<!--<div class="container center"> </div>-->
+	  
+  	
+	  
+  	<div class="container botton">
+  	  <div class="row">
+  	    <div class="col-xl-3">
+			<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FBangkok" width="100%" height="90" frameborder="0" seamless>
+			</iframe>
+			<div id="calendar">
+    <div class="col-xl-12" id="calendar_header"><i class="icon-chevron-left"></i><h1></h1><i class="icon-chevron-right"></i>         </div>
+    <div id="calendar_weekdays"></div>
+    <div id="calendar_content"></div>
+  </div>
+		</div>
+<div class="col-xl-9">
+  <br><br>			  
+<tr>
+<table class="table table-bordered calendar">
+<tbody><tr>
+<!--<th class="text-center bg-info">&nbsp;</th>-->
+<th class="text-center month_header bg-warning" colspan="7">November&nbsp;2019</th>
+</tr>
+
+<tr>
+<th class="day_header"><strong>Time</strong></th><th class="day_header">8:30-9:00</th><th class="day_header">9:00-9:30</th><th class="day_header">9:30-10:00</th><th class="day_header">10:00- 10:30</th><th class="day_header">10:30-11:00</th><th class="day_header">11:00-11:30</th>
+
+
+<tr>
+<td><strong>Room A</strong><br>  <div class="day_booking"></div>                                
+              </td><td>
+                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                           
+                                </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                 
+                                </td><td>
+                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
+                                </td><td>
+                                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
+                                </td><td>
+                                      <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                
+                                </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
+                                </td>
+</tr>
+
+<tr>
+<td><strong>Room B</strong><br>  <div class="day_booking"></div>                                
+                                </td><td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
+                                </td><td>
+                                      <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                              
+                                </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
+                                </td><td>
+                                   <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                              
+                                </td><td>
+                                 <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                              
+                                </td><td>
+                                <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
+                                </td>
+</tr>
+
+<tr>
+<td><strong>Room C</strong><br>  <div class="day_booking"></div>                                
+                                </td><td>
+                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
+                                </td><td> 
+                                   <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                </td><td>
+                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                           
+                                </td><td>
+                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                
+                                </td><td>
+                                    <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                
+                                </td><td>
+                                 <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                               
+                                </td>
+</tr>
+
+<tr>
+<td><strong>Room D</strong><br>  <div class="day_booking"></div>                                
+                                </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
+                                </td><td>
+                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                 
+                                </td><td>
+                                   <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                
+                                </td><td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                          
+                                </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                             
+                                </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>                                
+                                </td>
+</tr>
+
+</tbody></table>
+
+		  </div>
+	  </div>
+	 </div>
+	  
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src={% static 'js/jquery-3.3.1.min.js' %}></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src={% static "js/popper.min.js" %} ></script> 
+  <script src={% static "js/bootstrap-4.3.1.js" %} ></script>
+		<!--SET CENTER LOGIN-->
+	<style>
+		.modelCenter{
+			top: 30%;
+			transform:  translateY(-50%);
+		}
+	
+	</style>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src= {% static "js/index.js" %}></script>
+  </body>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-login modelCenter">
+		<div class="modal-content col-xl-12">
+				<h2 align="center" class="modal-title">Login <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2>
+                
+			
+			<div class="modal-body">
+				<form action="/examples/actions/confirmation.php" method="post">
+					<div class="form-group">
+						<input type="text" class="form-control" name="id" placeholder="Student ID" required="required">		
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+					</div>        
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="AvailiableModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-login modelCenter">
+		<div class="modal-content col-xl-12">
+				<h2 align="center" class="modal-title">Please Login <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2>
+                
+			
+			<div class="modal-body">
+				<form action="/examples/actions/confirmation.php" method="post">
+					<div class="form-group">
+						<input type="text" class="form-control" name="id" placeholder="Student ID" required="required">		
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+					</div>        
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+</html>

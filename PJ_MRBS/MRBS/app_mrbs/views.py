@@ -10,4 +10,3 @@ from .templates import app_mrbs
 
 def index(request):
     return render(request,'app_mrbs/index.html')
-    # return HttpResponse("<h1>job<h1>")

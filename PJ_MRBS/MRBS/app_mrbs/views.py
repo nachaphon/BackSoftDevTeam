@@ -28,5 +28,3 @@ def check_account(request):
         return render(request,'app_mrbs/index.html')
     else:
         return HttpResponse()
-            # mix sud lhor
-            # khambenz

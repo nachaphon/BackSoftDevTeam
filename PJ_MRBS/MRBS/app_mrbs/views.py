@@ -22,7 +22,7 @@ def homepage(request):
             if IN_ID == i.username and IN_PASSWORD == i.password:
                 context = {'username': i.username  }
                 if i.status == "user":
-                    return render(request,'app_mrbs/user.html',context)
+                    return render(request,'app_mrbs/user_page.html',context)
                 elif i.status == "admin":
                     return render(request,'app_mrbs/admin_page.html',context)
                 break
@@ -52,7 +52,7 @@ def check_account(request):
         return HttpResponse("11111111111")
 
 def admin(request):
-    return HttpResponse("<h2>job<h2>")
+    return HttpResponse("href=")
 
 def pick_day(request):
     all_day = Day.objects.all()

@@ -6,7 +6,7 @@ class Account(models.Model):
     password = models.CharField(max_length = 100)
     status = models.CharField(max_length = 100, default = "user")
     def __str__(self):
-        return self.user_name
+        return self.username
 
 class Day(models.Model):
     day = models.CharField(max_length = 2)

@@ -53,7 +53,6 @@ def check_account(request):
 
 def admin(request):
     return HttpResponse("<h2>job<h2>")
-        return HttpResponse()
 
 def pick_day(request):
     all_day = Day.objects.all()

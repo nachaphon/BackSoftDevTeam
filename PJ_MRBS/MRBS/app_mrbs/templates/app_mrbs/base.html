@@ -7,32 +7,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MRBS</title>
     <!-- Bootstrap -->
-	<link href={% static 'css/bootstrap-4.3.1.css' %} rel="stylesheet">
+	<link href="{% static 'css/bootstrap-4.3.1.css' %}" rel="stylesheet">
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
-	<link rel="stylesheet" href={% static 'css/style.css' %}>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	  
 	  
   </head>
   <body>
+        <head>
+                <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+                </head>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <!--<div class="container header">-->
-  <head>
-  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'home-page' %}">MRBS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"> <a class="nav-link" href="{% url 'home-page' %}">Home <span class="sr-only">(current)</span></a> </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-<button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">Login</button>
-<!-- <button type="button" class="btn btn-light" data-toggle="modal" data-target="#LoginfailModal">Login1</button> -->
-        </form>
-      </div>
-  </nav>
+    {% block content %}
+    {% endblock content %}
+       
     <!-- <img src="images/Header2.jpg" class="img-fluid" alt="Placeholder image"> -->
-    <img src={% static 'app_mrbs/Header2.jpg' %} class="img-fluid" alt="Placeholder image">
+    <img src="{% static 'app_mrbs/Header2.jpg' %}" class="img-fluid" alt="Placeholder image">
 <!--	  <marquee>บ่เสร็จ</marquee>-->
 <!--<div class="container center"> </div>-->
 	  
@@ -135,7 +126,7 @@
 	 </div>
 	  
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src={% static 'js/jquery-3.3.1.min.js' %}></script>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src={% static "js/popper.min.js" %} ></script> 

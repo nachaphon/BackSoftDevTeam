@@ -12,19 +12,44 @@ class HomePageView(TemplateView):
         return render(request, 'app_mrbs/index.html', context=None)
 
 
+def homepage(request):
+    if request.method == 'POST':
+        IN_ID = request.POST.get('id')
+        IN_PASSWORD = request.POST.get('password')
+        all_account = Account.objects.all()
+
+        for i in all_account:
+            if IN_ID == i.username and IN_PASSWORD == i.password:
+                context = {'username': i.username  }
+                if i.status == "user":
+                    return render(request,'app_mrbs/user.html',context)
+                elif i.status == "admin":
+                    return render(request,'app_mrbs/admin_page.html',context)
+                break
+
+        return render(request, 'app_mrbs/login_error.html')
+    else:
+        return render(request, 'app_mrbs/home_page.html')
+
+
 def check_account(request):
     if request.method == 'POST':
         IN_ID = request.POST.get('id')
         IN_PASSWORD = request.POST.get('password')
-        ck_id = False
         all_account = Account.objects.all()
 
         for i in all_account:
-            if IN_ID == i.user_name and IN_PASSWORD == i.password:
-                ck_id = True
-                return render(request,'app_mrbs/user.html')
+            if IN_ID == i.username and IN_PASSWORD == i.password:
+                context = {'username': i.username  }
+                if i.status == "user":
+                    return render(request,'app_mrbs/user.html',context)
+                elif i.status == "admin":
+                    return render(request,'app_mrbs/admin_page.html',context)
                 break
 
-        return render(request,'app_mrbs/index.html')
+        return render(request, 'app_mrbs/index.html', context=None)
     else:
-        return HttpResponse()
+        return HttpResponse("11111111111")
+
+def admin(request):
+    return HttpResponse("<h2>job<h2>")

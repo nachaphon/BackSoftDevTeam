@@ -2,7 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Account(models.Model):
-    user_name = models.CharField(max_length = 100)
+    username = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
+    status = models.CharField(max_length = 100, default = "user")
     def __str__(self):
-        return self.user_name
+        return self.username

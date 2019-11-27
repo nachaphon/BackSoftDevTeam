@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from django.template import loader
 from django.http import HttpResponse
 from .templates import app_mrbs
-from app_mrbs.models import Account
+from app_mrbs.models import Account, Day, Room, Timeslot
 
 # Create your views here.
 
@@ -49,7 +49,33 @@ def check_account(request):
 
         return render(request, 'app_mrbs/index.html', context=None)
     else:
+<<<<<<< HEAD
         return HttpResponse("11111111111")
 
 def admin(request):
     return HttpResponse("<h2>job<h2>")
+=======
+        return HttpResponse()
+
+def pick_day(request):
+    all_day = Day.objects.all()
+    context = {'all_day':all_day}
+    return render(request, 'app_mrbs/pick_day.html', context)
+
+def pick_room(request, day_id):
+    day = get_object_or_404(Day, pk = day_id)
+    # all_room = day.Room_set.all()
+    all_room = Room.objects.filter(day = day_id)
+    # room1 = all_room[0].Timeslot.objects.filter(room = all_room[0])
+    slot1 = Timeslot.objects.filter(room = all_room[0])[0]
+    # room1_name = room1.room_name()
+    # for room in all_room:
+    #     slot1 = Timeslot.objects.filter(room = room.id, slot = "1")
+    # room1_slot1 =
+    # form_room1_slot1 = Timeslot(request.POST or None)
+    # if room1_slot1.is_valid():
+    #     user_info.user_nam = form_room1_slot1.cleaned_data['status']
+    #     user_info.save()
+    context = {'day':day, 'all_room':all_room, 'slot1':slot1}
+    return render(request, 'app_mrbs/pick_room.html', context)
+>>>>>>> 9b5f5aea0b0cbf4e682344fe37aa9f32203fa403

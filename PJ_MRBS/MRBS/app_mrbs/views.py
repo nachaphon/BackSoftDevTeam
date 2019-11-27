@@ -18,15 +18,14 @@ def check_account(request):
         IN_PASSWORD = request.POST.get('password')
         ck_id = False
         all_account = Account.objects.all()
-        
+
         for i in all_account:
             if IN_ID == i.user_name and IN_PASSWORD == i.password:
                 ck_id = True
                 return render(request,'app_mrbs/user.html')
                 break
-        
+
         return render(request,'app_mrbs/index.html')
     else:
         return HttpResponse()
-            
-        
+            # mix sud lhor

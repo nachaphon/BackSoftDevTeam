@@ -6,9 +6,6 @@ class Account(models.Model):
     password = models.CharField(max_length = 100)
     status = models.CharField(max_length = 100, default = "user")
     def __str__(self):
-<<<<<<< HEAD
-        return self.username
-=======
         return self.user_name
 
 class Day(models.Model):
@@ -31,4 +28,4 @@ class Timeslot(models.Model):
     user = models.CharField(max_length = 100, default = 'none')
     def __str__(self):
         return self.slot
->>>>>>> 9b5f5aea0b0cbf4e682344fe37aa9f32203fa403
+

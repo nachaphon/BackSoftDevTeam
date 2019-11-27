@@ -18,3 +18,10 @@ class Room(models.Model):
     room_seat = models.CharField(max_length = 3)
     def __str__(self):
         return self.room_name
+
+class Timeslot(models.Model):
+    room = models.ForeignKey(Room, on_delete = models.CASCADE)
+    slot = models.CharField(max_length = 2)
+    user = models.CharField(max_length = 100, default = 'none')
+    def __str__(self):
+        return self.slot

@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.template import loader
 from django.http import HttpResponse
 from .templates import app_mrbs
-from app_mrbs.models import Account, Day
+from app_mrbs.models import Account, Day, Room
 
 # Create your views here.
 
@@ -36,5 +36,7 @@ def pick_day(request):
 
 def pick_room(request, day_id):
     day = get_object_or_404(Day, pk = day_id)
-    context = {'day':day}
+    # all_room = day.Room_set.all()
+    all_room = Room.objects.filter(day = day_id)
+    context = {'day':day, 'all_room':all_room}
     return render(request, 'app_mrbs/pick_room.html', context)

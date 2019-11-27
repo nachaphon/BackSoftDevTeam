@@ -49,12 +49,10 @@ def check_account(request):
 
         return render(request, 'app_mrbs/index.html', context=None)
     else:
-<<<<<<< HEAD
         return HttpResponse("11111111111")
 
 def admin(request):
     return HttpResponse("<h2>job<h2>")
-=======
         return HttpResponse()
 
 def pick_day(request):
@@ -78,4 +76,3 @@ def pick_room(request, day_id):
     #     user_info.save()
     context = {'day':day, 'all_room':all_room, 'slot1':slot1}
     return render(request, 'app_mrbs/pick_room.html', context)
->>>>>>> 9b5f5aea0b0cbf4e682344fe37aa9f32203fa403

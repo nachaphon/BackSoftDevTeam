@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.template import loader
 from django.http import HttpResponse
 from .templates import app_mrbs
-from app_mrbs.models import Account
+from app_mrbs.models import Account, Day
 
 # Create your views here.
 
@@ -28,3 +28,8 @@ def check_account(request):
         return render(request,'app_mrbs/index.html')
     else:
         return HttpResponse()
+
+def pick_day(request):
+    all_day = Day.objects.all()
+    context = {'all_day':all_day}
+    return render(request, 'app_mrbs/pick_day.html', context)

@@ -21,7 +21,9 @@ class Room(models.Model):
 
 class Timeslot(models.Model):
     room = models.ForeignKey(Room, on_delete = models.CASCADE)
+    # day = models.ForeignKey(Day, on_delete = modeks.CASCADE)
     slot = models.CharField(max_length = 2)
+    status = models.CharField(max_length = 20, default = "empty")
     user = models.CharField(max_length = 100, default = 'none')
     def __str__(self):
         return self.slot

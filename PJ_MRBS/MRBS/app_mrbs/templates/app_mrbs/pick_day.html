@@ -1,4 +1,4 @@
 <h1>Select day to book</h1>
   {% for day in all_day %}
-    <li>{{day}}</li>
+    <li><a href="{% url 'mrbs:pick_room' day.id %}">{{ day }}</a></li>
   {% endfor %}

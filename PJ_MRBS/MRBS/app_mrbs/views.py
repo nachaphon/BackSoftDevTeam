@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from django.template import loader
 from django.http import HttpResponse
@@ -33,3 +33,8 @@ def pick_day(request):
     all_day = Day.objects.all()
     context = {'all_day':all_day}
     return render(request, 'app_mrbs/pick_day.html', context)
+
+def pick_room(request, day_id):
+    day = get_object_or_404(Day, pk = day_id)
+    context = {'day':day}
+    return render(request, 'app_mrbs/pick_room.html', context)

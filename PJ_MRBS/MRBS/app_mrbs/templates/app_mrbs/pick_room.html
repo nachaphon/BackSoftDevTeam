@@ -1,5 +1,12 @@
 <h1> Day {{day.day}}</h1>
 <h1>Select Room to book</h1>
-<li>{{all_room.0}}</li>
-<li>{{all_room.1}}</li>
-<li>{{slot1}}</li>
+<li>Room {{all_room.0}}</li>
+<li>{{status1}}</li>
+<li>{{timeslot1}}</li>
+<li>{{status}}</li>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <td><input type="submit" value="reserve" name="reserve"></td>
+    <td><input type="submit" value="cancel" name="cancel"></td>
+</tr>

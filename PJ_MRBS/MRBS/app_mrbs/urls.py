@@ -6,8 +6,10 @@ app_name = 'mrbs'
 urlpatterns = [
     # path('',views.HomePageView.as_view() , name= 'home-page'),
     path('',views.homepage , name= 'home-page'),
-    path('admin-page',views.admin , name= 'admin-page'),
-    # path('check_account/',views.check_account ,name='ck'),
+    path('admin_page/',views.admin , name= 'admin-page'),
+    path('user_page/',views.admin , name= 'user-page'),
+    path('account/',views.check_account ,name='ck'),
+    path('sort/',views.sort_room ,name='sort'),
     
     path('user/pick_day',views.pick_day, name = "pick_day"),
     path('user/pick_day/pick_room/<int:day_id>',views.pick_room, name = "pick_room"),

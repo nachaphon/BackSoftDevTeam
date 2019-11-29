@@ -4,6 +4,7 @@ from django.template import loader
 from django.http import HttpResponse
 from .templates import app_mrbs
 from app_mrbs.models import Account, Day, Room, Timeslot
+from .forms import Timeslotform
 
 # Create your views here.
 
@@ -64,7 +65,8 @@ def pick_room(request, day_id):
     # all_room = day.Room_set.all()
     all_room = Room.objects.filter(day = day_id)
     # room1 = all_room[0].Timeslot.objects.filter(room = all_room[0])
-    slot1 = Timeslot.objects.filter(room = all_room[0])[0]
+    # status1 = Timeslot.objects.filter(room = all_room[0])[0]['status1']
+    status1 = Timeslot.objects.values('status1').filter(room = all_room[0])[0]['status1']
     # room1_name = room1.room_name()
     # for room in all_room:
     #     slot1 = Timeslot.objects.filter(room = room.id, slot = "1")
@@ -73,5 +75,25 @@ def pick_room(request, day_id):
     # if room1_slot1.is_valid():
     #     user_info.user_nam = form_room1_slot1.cleaned_data['status']
     #     user_info.save()
-    context = {'day':day, 'all_room':all_room, 'slot1':slot1}
+    timeslot1 = Timeslot.objects.filter(room = all_room[0])[0]
+    status = timeslot1.status1
+    # val = 'mix'
+    # if request.method == 'POST':
+    #     form = Fooform(request.POST)
+    #     if form.is_valid():
+    #         val = form.cleaned_data.get("btn")
+    #         status1 = 'full'
+    #         timeslot1.save()
+    # else:
+    #     form = Fooform()
+    form = Timeslotform()
+    # if form.is_valid():
+    if request.POST:
+        if 'reserve' in request.POST:
+            timeslot1.status1 = 'full'
+            timeslot1.save()
+        elif 'cancel' in request.POST:
+            timeslot1.status1 = 'empty'
+            timeslot1.save()
+    context = {'day':day, 'all_room':all_room, 'status1':status1, 'form':form, 'timeslot1':timeslot1, 'status':status}
     return render(request, 'app_mrbs/pick_room.html', context)

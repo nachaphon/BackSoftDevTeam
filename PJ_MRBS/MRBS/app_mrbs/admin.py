@@ -5,4 +5,6 @@ from app_mrbs import models
 admin.site.register(models.Account)
 admin.site.register(models.Day)
 admin.site.register(models.Room)
+admin.site.register(models.RoomDay)
 admin.site.register(models.Timeslot)
+admin.site.register(models.Slot)

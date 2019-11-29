@@ -14,15 +14,29 @@ class Day(models.Model):
         return self.day
 
 class Room(models.Model):
-    day = models.ForeignKey(Day, on_delete = models.CASCADE)
+    # day = models.ForeignKey(Day, on_delete = models.CASCADE)
     room_name = models.CharField(max_length = 100)
     room_seat = models.CharField(max_length = 3)
     def __str__(self):
         return self.room_name
 
+class RoomDay(models.Model):
+    day = models.ForeignKey(Day, on_delete = models.CASCADE)
+    room = models.ForeignKey(Room, on_delete = models.CASCADE)
+    def __str__(self):
+        return (str(self.day)+"_"+str(self.room))
+
+class Slot(models.Model):
+    name = models.CharField(max_length = 100, default = "")
+    status = models.CharField(max_length = 100, default = "empty")
+    user = models.CharField(max_length = 100, default = "none")
+    def __str__(self):
+        return self.name
+
 class Timeslot(models.Model):
     room = models.ForeignKey(Room, on_delete = models.CASCADE)
-    # day = models.ForeignKey(Day, on_delete = modeks.CASCADE)
+    slot = models.ForeignKey(Slot, on_delete = models.CASCADE)
+    # day = models.ForeignKey(Day, on_delete = models.CASCADE)
     # slot1 = models.CharField(max_length = 2)
     of_room = models.CharField(max_length = 100, default = "NONE")
 
@@ -89,4 +103,4 @@ class Timeslot(models.Model):
     status16 = models.CharField(max_length = 20, default = "empty")
     user16 = models.CharField(max_length = 100, default = 'none')
     def __str__(self):
-        return self.of_room
+        return str(self.room)

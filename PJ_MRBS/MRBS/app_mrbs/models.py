@@ -40,6 +40,8 @@ class Timeslot(models.Model):
     # slot1 = models.CharField(max_length = 2)
     of_room = models.CharField(max_length = 100, default = "NONE")
 
+
+
     status1 = models.CharField(max_length = 20, default = "empty")
     user1 = models.CharField(max_length = 100, default = 'none')
 
@@ -53,7 +55,7 @@ class Timeslot(models.Model):
 
     # slot4 = models.CharField(max_length = 2)
     status4 = models.CharField(max_length = 20, default = "empty")
-    user4 = models.CharField(max_length = 100, default = 'none')
+    user4 = models.CharField(max_length =  100, default = 'none')
 
     # slot5 = models.CharField(max_length = 2)
     status5 = models.CharField(max_length = 20, default = "empty")

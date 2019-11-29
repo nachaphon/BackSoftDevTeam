@@ -45,9 +45,18 @@ def sort_room(request):
     result = []
     all_room = Room.objects.all()
 
+    result = []
+
+    all_room = Room.objects.all()
+    all_timeslot = Timeslot.objects.all()
     for room in all_room:
+        result1 = []
         if int(room.room_seat) >= seat:
-            result.append(room)
+            result1.append(room)
+            for slot in all_timeslot:
+                result1.append(slot[0])
+            result.append(result1)
+
 
     context = {'result':result }
 
@@ -78,8 +87,8 @@ def pick_room(request, day_id):
     # if room1_slot1.is_valid():
     #     user_info.user_nam = form_room1_slot1.cleaned_data['status']
     #     user_info.save()
-    # timeslot1 = Timeslot.objects.filter(room = all_room[0])[0]
-    # status = timeslot1.slot
+    timeslot1 = Timeslot.objects.filter(room = all_room[0])[0]
+    status1 = timeslot1.status1
     # val = 'mix'
     # if request.method == 'POST':
     #     form = Fooform(request.POST)
@@ -110,4 +119,18 @@ def pick_room(request, day_id):
         'all_room':all_room
 
     }
+    list = [timeslot1]
+    form = Timeslotform()
+    # if form.is_valid():
+    for s in range(1):
+        job = list[s]
+        if request.POST:
+            if 'reserve' in request.POST:
+                # timeslot1.status1 = 'full'
+                job.status1 = 'full'
+                timeslot1.save()
+            elif 'cancel' in request.POST:
+                timeslot1.status1 = 'empty'
+                timeslot1.save()
+    context = {'day':day, 'all_room':all_room, 'status1':status1, 'form':form, 'timeslot1':timeslot1,}
     return render(request, 'app_mrbs/pick_room.html', context)

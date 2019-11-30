@@ -77,4 +77,4 @@ class Timeslot(models.Model):
     status16 = models.CharField(max_length = 20, default = "empty")
     user16 = models.CharField(max_length = 100, default = 'none')
     def __str__(self):
-        return ("Timeslot of_"+str(self.roomday))
+        return ("Timeslot_of_"+str(self.roomday))

@@ -47,7 +47,7 @@ def sort_room(request):
 
     result = []
 
-  
+
     # for room in all_room:
     #     result1 = []
     #     if int(room.room_seat) >= seat:
@@ -70,22 +70,22 @@ def pick_day(request):
 def pick_room(request, day_id):
     day = get_object_or_404(Day, pk = day_id)
     thisday = RoomDay.objects.filter(day = day_id) #เอาทุกห้องของวันนี้มา
-    all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0]) #เอาslotของห้องที่ 1 ของวันนี้มา
+    all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
+    #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
     # all_slot = Timeslot.objects.filter(thisroom = day_id)
-    # slot1 = all_slot
+    slot1 = all_slot_room1.status1
     # status1 = slot1.status1
-    # if request.POST:
-    #     if 'reserve' in request.POST:
-    #         # timeslot1.status1 = 'full'
-    #         slot1.status1 = 'full'
-    #         slot1.save()
-    #     elif 'cancel' in request.POST:
-    #         slot1.status1 = 'empty'
-    #         slot1.save()
+    if request.POST:
+        if 'reserve' in request.POST:
+            all_slot_room1.status1 = 'full'
+            all_slot_room1.save()
+        elif 'cancel' in request.POST:
+            all_slot_room1.status1 = 'empty'
+            all_slot_room1.save()
 
     context = { 'day':day,
                 'thisday':thisday,
-                'all_slot_room1':all_slot_room1,}
-                # 'slot1':slot1, }
+                'all_slot_room1':all_slot_room1,
+                'slot1':slot1, }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

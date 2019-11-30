@@ -26,19 +26,12 @@ class RoomDay(models.Model):
     def __str__(self):
         return (str(self.day)+"_"+str(self.room))
 
-class Slot(models.Model):
-    name = models.CharField(max_length = 100, default = "")
-    status = models.CharField(max_length = 100, default = "empty")
-    user = models.CharField(max_length = 100, default = "none")
-    def __str__(self):
-        return self.name
 
 class Timeslot(models.Model):
-    room = models.ForeignKey(Room, on_delete = models.CASCADE)
-    slot = models.ForeignKey(Slot, on_delete = models.CASCADE)
+    roomday = models.ForeignKey(RoomDay, on_delete = models.CASCADE)
     # day = models.ForeignKey(Day, on_delete = models.CASCADE)
     # slot1 = models.CharField(max_length = 2)
-    of_room = models.CharField(max_length = 100, default = "NONE")
+    # of_room = models.CharField(max_length = 100, default = "NONE")
 
 
 
@@ -105,4 +98,4 @@ class Timeslot(models.Model):
     status16 = models.CharField(max_length = 20, default = "empty")
     user16 = models.CharField(max_length = 100, default = 'none')
     def __str__(self):
-        return str(self.room)
+        return ("Timeslot of_"+str(self.roomday))

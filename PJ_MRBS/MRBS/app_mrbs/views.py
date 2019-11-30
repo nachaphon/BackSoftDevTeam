@@ -101,13 +101,13 @@ def pick_room(request, day_id):
     # form = Timeslotform()
     # # if form.is_valid():
 
-    job = all_slot[0].room
-    mix = ''
-    if request.POST:
-        if 'reserve' in request.POST:
-            job.room_seat = str(0)
-            job.save()
-            mix = job.room_seat
+    # job = all_slot[0].room
+    # mix = ''
+    # if request.POST:
+    #     if 'reserve' in request.POST:
+    #         job.room_seat = str(0)
+    #         job.save()
+    #         mix = job.room_seat
             # timeslot1.status1 = 'full'
             # timeslot1.save()
     #     elif 'cancel' in request.POST:
@@ -115,7 +115,6 @@ def pick_room(request, day_id):
     #         timeslot1.save()
     context = {#'day':day, 'all_room':all_room, 'status1':status1, 'form':form, 'timeslot1':timeslot1, 'status':status ,
         'slot':all_slot,
-        'mix':mix,
         'all_room':all_room
 
     }

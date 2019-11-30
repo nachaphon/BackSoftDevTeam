@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.template import loader
 from django.http import HttpResponse
 from .templates import app_mrbs
-from app_mrbs.models import Account, Day, Room, Timeslot,Slot ,RoomDay
+from app_mrbs.models import Account, Day, Room, Timeslot ,RoomDay
 from .forms import Timeslotform
 
 # Create your views here.

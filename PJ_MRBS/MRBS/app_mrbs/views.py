@@ -43,22 +43,21 @@ def sort_room(request):
     seat = 10
     time_length = 3 # hr ไม่เกิน  4 hr
     result = []
-    all_room = Room.objects.all()
+    all_room = Timeslot.objects.all()
 
     result = []
 
-    all_room = Room.objects.all()
-    all_timeslot = Timeslot.objects.all()
-    for room in all_room:
-        result1 = []
-        if int(room.room_seat) >= seat:
-            result1.append(room)
-            for slot in all_timeslot:
-                result1.append(slot[0])
-            result.append(result1)
+  
+    # for room in all_room:
+    #     result1 = []
+    #     if int(room.room_seat) >= seat:
+    #         result1.append(room)
+    #         for slot in all_timeslot:
+    #             result1.append(slot[0])
+    #         result.append(result1)
 
 
-    context = {'result':result }
+    context = {'result':result , 'all_room':all_room }
 
     return render(request, 'app_mrbs/sort.html', context)
 

@@ -4432,4 +4432,10 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
+
+//function change()
+//{
+//  document.getElementById("myButton1").value="จองละ";
+//};
+
 //# sourceMappingURL=bootstrap.js.map

@@ -1,8 +1,37 @@
 <h1>Sort</h1>
-<li>{{ all_room }}</li>
-<li>{{ result }}</li>
+<!-- <li>{{ all_room }}</li> -->
+<!-- <li>{{ result }}</li> -->
+<h2>seat : {{seat }}</h2>
+<h2>slot : {{slot_length }}</h2>
+
+<!-- {% for r in result %}
+<li>slot  : {{r }}</li>
+{% endfor %} -->
+<h2>result : {{ len_result_room }} room</h2>
+
   {% for r in result %}
-    <li>{{ r }}</li>
-    
+
+    <li>{{ r.0 }}</li>
+    <li>timeslot : {{ r.1 }}</li>
+    <li>{{ r.0.status1 }}</li>
+    <li>{{ r.0.status2 }}</li>
+    <li>{{ r.0.status3 }}</li>
+    <li>{{ r.0.status4 }}</li>
+    <li>{{ r.0.status5 }}</li>
+    <li>{{ r.0.status6 }}</li>
+    <li>{{ r.0.status7 }}</li>
+    <li>{{ r.0.status8 }}</li>
+    <li>{{ r.0.status9 }}</li>
+    <li>{{ r.0.status10 }}</li>
+    <li>{{ r.0.status11 }}</li>
+    <li>{{ r.0.status12 }}</li>
+    <li>{{ r.0.status13 }}</li>
+    <li>{{ r.0.status14 }}</li>
+    <li>{{ r.0.status15 }}</li>
+    <li>{{ r.0.status16 }}</li>
+
+  
+
     <!-- <li>{{ r.day }}</li> -->
   {% endfor %}
+ 

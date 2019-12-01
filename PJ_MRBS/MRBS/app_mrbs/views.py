@@ -42,13 +42,14 @@ def sort_room(request):
     day = 1
     time = [12,30]
     seat = 8
-    time_length_hr = 3 # hr ไม่เกิน  4 hr
+    time_length_hr = 1 # hr ไม่เกิน  4 hr
     time_length_min = 30 # min
     if time_length_min == 30:
         time_length_min = 1
     slot_length = (time_length_hr*2) + time_length_min
     all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
 
+    result = []
     result_room = []
     result_slot = []
 
@@ -76,21 +77,27 @@ def sort_room(request):
 
   
     for i in range(len(all_room)):
+        result_ = []
         if int(all_room[i].roomday.room.room_seat) > seat:
             count_slot_empty = 0
+            count_slot = 0
             r_slot = []
             for j in all_slot[i]:
+                count_slot += 1
                 if j == "empty":
                     count_slot_empty += 1
-                    result_slot.append(j)
+                    r_slot.append(count_slot)
                 else:
                     count_slot_empty = 0
                     r_slot = []
                 if count_slot_empty >= slot_length:
                     result_slot.append(r_slot)
                     result_room.append(all_room[i])
+                    result_.append(all_room[i])
+                    result_.append(r_slot)
+                    result.append(result_)
                     break
-
+    
 
 
     context = {'result_room':result_room ,
@@ -99,6 +106,7 @@ def sort_room(request):
                'seat':seat,
                'len_result_room':len(result_room),
                'result_slot':result_slot,
+               'result':result,
 
 
             }

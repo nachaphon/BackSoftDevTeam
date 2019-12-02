@@ -1,16 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>login error</title>
-    </head>
-    <body>
-        <h2>Login error</h2>
-        <form method="post" action="/result/">
-            <table>
-                    <td><a href="/">back</a></td>
-            </table>
+{% extends "app_mrbs/base.html" %}
 
-        </form>
-    </body>
-</html>
+{% block loginerror %}
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name =viewport content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--<link rel="stylesheet" href="untitled.css">-->
+<title>Popup</title>
+<style>
+.button
+	{
+	
+		background: #fff;
+		padding: 10px 15px;
+		color: black;
+		font-weight: bolder;
+		text-transform: uppercase;
+		font-size: 18px
+		border-radius: 25px;
+		box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+		margin-top: 25px;
+		text-decoration: none;
+		transition: 0.4s;
+		-webkit-animation-name: example; 
+        -webkit-animation-duration: 0.4s; 
+        animation-name: example;
+        animation-duration: 0.4s;
+
+	}
+	.button:hover
+	{
+		background: #34495e;
+		color: #fff;
+	}
+.popup
+{
+	background:#E80F12;
+	width: 500px;
+	height: 500px;
+	border-radius: 25px;
+	position: absolute;
+	top: 200px;
+	left: 700px;
+	display:run-in; 
+	justify-content: center;
+	align-items: center;
+    -webkit-animation-name: example; 
+    -webkit-animation-duration: 1s; 
+    animation-name: example;
+    animation-duration: 1s;
+}
+.popup-content
+{
+	height: 250px;
+	width: 500px;
+	background: #DD1B1E;
+	padding: 20px;
+	border-radius: 5px;
+	position: relative;
+}
+@-webkit-keyframes example {
+  from {background-color: white;}
+  to {background-color: orangered;}
+}
+@keyframes example {
+  from {background-color: white;}
+  to {background-color: orangered;}
+}
+
+</style>
+</head>
+<body>
+<div class="popup">
+<div style = "position:absolute; left:10px; top:100px;" >
+<h1 style="text-align: center"><font color="#FFFFFF" size="+6" >User or password incorrect.</font></h1>
+</div>
+<a style = "position:absolute; left:220px; top:300px;" href="{% url 'mrbs:home-page' %}" class="button">Back</a>
+</div>
+	
+</div>
+</body>
+</html> 
+{% endblock loginerror %}

@@ -13,10 +13,13 @@ class HomePageView(TemplateView):
         return render(request, 'app_mrbs/index.html', context=None)
 
 def homepage(request):
-    return render(request, 'app_mrbs/home_page.html')
+    all_day = Day.objects.all()
+    context = {'all_day':all_day ,
+    }
+    return render(request, 'app_mrbs/home_page.html',context)
 
 
-def check_account(request):
+def check_account(request): 
     if request.method == 'POST':
         IN_ID = request.POST.get('id')
         IN_PASSWORD = request.POST.get('password')
@@ -24,19 +27,35 @@ def check_account(request):
 
         for i in all_account:
             if IN_ID == i.username and IN_PASSWORD == i.password:
-                context = {'username': i.username  }
+                context = {'username': i.username , 'status':i.status , 'account':i  }
                 if i.status == "user":
-                    return render(request,'app_mrbs/user_page.html',context)
-                elif i.status == "admin":
-                    return render(request,'app_mrbs/admin_page.html',context)
+                    request.session['user_name'] = IN_ID
+                return render(request,'app_mrbs/select.html',context)
+
+                # if i.status == "user":
+                #     return render(request,'app_mrbs/user_page.html',context)
+                  
+                # elif i.status == "admin":
+                #     return render(request,'app_mrbs/admin_page.html',context)
                 break
 
         return render(request, 'app_mrbs/login_error.html', context=None)
-    else:
-        return HttpResponse("11111111111")
 
 def admin(request):
-    return HttpResponse("href=")
+    if request.method == 'POST':
+        IN_NAME = request.POST.get('username')
+        context = {
+            'username':IN_NAME ,
+        }
+        return render(request, 'app_mrbs/admin_page.html', context)
+
+def user(request):  
+    if request.method == 'POST':
+        IN_NAME = request.POST.get('username')
+        context = {
+            'username':IN_NAME ,
+        }
+        return render(request, 'app_mrbs/user_page.html', context)
 
 def sort_room(request):
     day = 1

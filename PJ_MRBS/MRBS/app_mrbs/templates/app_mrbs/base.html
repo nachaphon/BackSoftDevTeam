@@ -1,5 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -27,6 +28,7 @@
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
 	<link rel="stylesheet" href={% static 'css/style.css' %}>
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css"/>  
+	<link rel="stylesheet" type="text/css" href={% static 'css/calendar.css' %}>
 	      <style>
         .tabBlock
         {
@@ -67,6 +69,25 @@
   			background-color: #dc3545;
   			border-color: #dc3545;
 		}	  
+				/* unvisited link */
+		a:link {
+		color: white;
+		}
+
+		/* visited link */
+		a:visited {
+		color: orangered;
+		}
+
+		/* mouse over link */
+		a:hover {
+		color: orange;
+		}
+
+		/* selected link */
+		a:active {
+		color: white;
+		}
 		</style>
   <script src={% static 'js/index.js' %}></script>
 	  
@@ -80,15 +101,15 @@
   <img src={% static 'images/Header2.jpg' %} class="img-fluid" alt="Placeholder image">
 <!--	  <marquee>บ่เสร็จ</marquee>-->
 <!--<div class="container center"> </div>-->
-	  
+
   	
 	  
   	<div class="container botton" >
   	  <div class="row" >
-  	    <div class="col-xl-3">
+  	    <div class="col-xl-10" >
 			<br>
 		  
-			<div  max-width:250px;width:100%;margin:0 auto;padding:20px;">
+			<div  max-width:250px; width:100%; margin:0 auto; padding:20px; style="position: relative; left: -500;">
 
         <table class="tabBlock" align="center" cellspacing="0" cellpadding="0" border="0">
             <tr><td class="clock" id="dc"></td>  <!-- THE DIGITAL CLOCK. -->
@@ -103,21 +124,92 @@
                     </table>
                 </td>
             </tr>
-        </table>
+		</table>
+		
     </div>
 <!------------------------------------------------------------------------->
-			
-			
- <div id="calendar">
-  </div>
-		</div>
-<div class="col-xl-9">
 
+<div style="position:relative;top: 500;" >
+		<!-- <h5 class="color1"> </h5> -->
+		<table style="width:20% " class="table1">
+		<tr>
+		<th class="th1">Mon</th>
+		<th class="th1">Tue</th> 
+		<th class="th1">Wed</th>
+		<th class="th1">Thu</th>
+		<th class="th1">Fri</th> 
+		<th class="th1">Sat</th>
+		<th class="th1">Sun</th>
+		</tr>
+		<tr>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: gray">28</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: gray">29</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: gray">30</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: gray">31</a></b></td>
+		<td class="button1" style="background-color: red" class="td1"><b>1</b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">2</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">3</a></b></td>
+	
+		</tr>
+		<tr>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">4</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">5</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">6</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">7</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">8</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">9</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">10</a></b></td>
+		</tr>
+		<tr>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">11</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">12</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">13</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">14</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">15</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">16</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">17</a></b></td>
+		</tr>
+		<tr>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">18</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">19</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">20</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">21</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">22</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">23</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">24</a></b></td>
+		</tr>
+		<tr>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">25</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">26</a><b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">27</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">28</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">29</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: black">30</a></b></td>
+		<td class="button1" class="td1"><a  href="default.asp" target="_blank"><b style="color: gray">1</a></b></td>
+		</tr>
+		</table>
+		<!-- </body> -->
+		</div>
+			
+ <!-- <div id="calendar"> -->
+  <!-- </div> -->
+  	   
+		</div>
+
+		
+
+<div class="col-xl-10">
 	<br><br>			  
 <tr>
 <table class="table table-bordered calendar">
 <tbody><tr>
 <!--<th class="text-center bg-info">&nbsp;</th>-->
+
+
+	
+
+
+
 <th class="text-center month_header bg-warning" colspan="6">November&nbsp;2019</th>
 </tr>
 
@@ -363,6 +455,10 @@
 	  </div>
   </div>
 	  
+
+
+
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src={% static 'js/jquery-3.3.1.min.js' %}></script>
 
@@ -382,7 +478,8 @@
 	  </script>
 	 											   
 </body>
-						   
+
+
 <!---------------------------------------------------------login----------------------------------------->
 <div id="loginpop" class="modal fade" role="dialog">
   <div class="modal-dialog modal-login modelCenter">
@@ -576,4 +673,12 @@
         return ticVal;
     }
 </script>
+
+
+
 </html>
+
+
+
+{% block loginerror %}
+{% endblock loginerror %}

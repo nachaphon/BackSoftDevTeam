@@ -75,8 +75,21 @@
 
   </head>
   <body onload="digitized();">
-	{% block content %}
-	{% endblock content %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="">MRBS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:home-page' %}">Home <span class="sr-only">(current)</span></a> </li>
+            <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:sort'%}">Find <span class="sr-only">(current)</span></a> </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#loginpop">Login</button>
+          </form>
+        </div>
+
+    </nav>
   <img src={% static 'images/Header2.jpg' %} class="img-fluid" alt="Placeholder image">
 <!--	  <marquee>บ่เสร็จ</marquee>-->
 <!--<div class="container center"> </div>-->
@@ -346,7 +359,7 @@
 <tr>
 <td><strong>16:00-16:30</strong><br></td>
 	<td>
-                                 <input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
+                                 <input type="submit" checked name="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
               </td><td>
                          		<input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
                                 </td><td>

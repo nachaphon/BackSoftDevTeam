@@ -13,4 +13,5 @@ urlpatterns = [
     
     path('user/pick_day',views.pick_day, name = "pick_day"),
     path('user/pick_day/pick_room/<int:day_id>',views.pick_room, name = "pick_room"),
+    path('base0',views.homepage2, name = "base0"),
 ]

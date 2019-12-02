@@ -18,6 +18,9 @@ def homepage(request):
     }
     return render(request, 'app_mrbs/home_page.html',context)
 
+def homepage2(request):
+    return render(request, 'app_mrbs/base0.html')
+
 
 def check_account(request): 
     if request.method == 'POST':
@@ -37,6 +40,9 @@ def check_account(request):
                   
                 # elif i.status == "admin":
                 #     return render(request,'app_mrbs/admin_page.html',context)
+                    return render(request,'app_mrbs/user_page.html',context)
+                elif i.status == "admin":
+                    return render(request,'app_mrbs/admin_page.html',context)
                 break
 
         return render(request, 'app_mrbs/login_error.html', context=None)
@@ -94,7 +100,7 @@ def sort_room(request):
         all_slot.append(r1)
 
 
-  
+
     for i in range(len(all_room)):
         result_ = []
         if int(all_room[i].roomday.room.room_seat) > seat:
@@ -116,7 +122,7 @@ def sort_room(request):
                     result_.append(r_slot)
                     result.append(result_)
                     break
-    
+
 
 
     context = {'result_room':result_room ,
@@ -248,6 +254,8 @@ def pick_room(request, day_id):
     for i in range(96, 161, 16):
         cancel_slot16.append(str(i))
 
+    user_name = request.session.get('user_name')
+
     if request.POST:
         for i in range(1, 161):
             if str(i) in request.POST:
@@ -263,108 +271,239 @@ def pick_room(request, day_id):
                     preRoomSelect = room_list[4]
                 # all_slot_room1.status1 = 'full'
                 if str(i) in reserve_slot1:
-                    preRoomSelect.status1 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status1 == 'empty':
+                        preRoomSelect.status1 = 'full'
+                        preRoomSelect.user1 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot2:
-                    preRoomSelect.status2 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status2 == 'empty':
+                        preRoomSelect.status2 = 'full'
+                        preRoomSelect.user2 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot3:
-                    preRoomSelect.status3 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status3 == 'empty':
+                        preRoomSelect.status3 = 'full'
+                        preRoomSelect.user3 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot4:
-                    preRoomSelect.status4 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status4 == 'empty':
+                        preRoomSelect.status4 = 'full'
+                        preRoomSelect.user4 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot5:
-                    preRoomSelect.status5 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status5 == 'empty':
+                        preRoomSelect.status5 = 'full'
+                        preRoomSelect.user5 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot6:
-                    preRoomSelect.status6 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status6 == 'empty':
+                        preRoomSelect.status6 = 'full'
+                        preRoomSelect.user6 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot7:
-                    preRoomSelect.status7 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status7 == 'empty':
+                        preRoomSelect.status7 = 'full'
+                        preRoomSelect.user7 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot8:
-                    preRoomSelect.status8 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status8 == 'empty':
+                        preRoomSelect.status8 = 'full'
+                        preRoomSelect.user8 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot9:
-                    preRoomSelect.status9 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status9 == 'empty':
+                        preRoomSelect.status9 = 'full'
+                        preRoomSelect.user9 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot10:
-                    preRoomSelect.status10 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status10 == 'empty':
+                        preRoomSelect.status10 = 'full'
+                        preRoomSelect.user10 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot11:
-                    preRoomSelect.status11 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status11 == 'empty':
+                        preRoomSelect.status11 = 'full'
+                        preRoomSelect.user11 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot12:
-                    preRoomSelect.status12 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status12 == 'empty':
+                        preRoomSelect.status12 = 'full'
+                        preRoomSelect.user12 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot13:
-                    preRoomSelect.status13 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status13 == 'empty':
+                        preRoomSelect.status13 = 'full'
+                        preRoomSelect.user13 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot14:
-                    preRoomSelect.status14 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status14 == 'empty':
+                        preRoomSelect.status14 = 'full'
+                        preRoomSelect.user14 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot15:
-                    preRoomSelect.status15 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status15 == 'empty':
+                        preRoomSelect.status15 = 'full'
+                        preRoomSelect.user15 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in reserve_slot16:
-                    preRoomSelect.status16 = 'full'
-                    preRoomSelect.save()
+                    if preRoomSelect.status16 == 'empty':
+                        preRoomSelect.status16 = 'full'
+                        preRoomSelect.user16 = user_name
+                        preRoomSelect.save()
+                    else:
+                        break
                 # elif str(i) in request.POST:
                 #     all_slot_room1.status1 = 'empty'
                 #     all_slot_room1.save()
                 elif str(i) in cancel_slot1:
+                    if preRoomSelect.user1 == user_name:
                         preRoomSelect.status1 = 'empty'
+                        preRoomSelect.user1 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot2:
+                    if preRoomSelect.user2 == user_name:
                         preRoomSelect.status2 = 'empty'
+                        preRoomSelect.user2 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot3:
+                    if preRoomSelect.user3 == user_name:
                         preRoomSelect.status3 = 'empty'
+                        preRoomSelect.user3 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot4:
+                    if preRoomSelect.user4 == user_name:
                         preRoomSelect.status4 = 'empty'
+                        preRoomSelect.user4 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot5:
+                    if preRoomSelect.user5 == user_name:
                         preRoomSelect.status5 = 'empty'
+                        preRoomSelect.user5 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot6:
+                    if preRoomSelect.user6 == user_name:
                         preRoomSelect.status6 = 'empty'
+                        preRoomSelect.user6 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot7:
+                    if preRoomSelect.user7 == user_name:
                         preRoomSelect.status7 = 'empty'
+                        preRoomSelect.user7 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot8:
+                    if preRoomSelect.user8 == user_name:
                         preRoomSelect.status8 = 'empty'
+                        preRoomSelect.user8 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot9:
+                    if preRoomSelect.user9 == user_name:
                         preRoomSelect.status9 = 'empty'
+                        preRoomSelect.user9 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot10:
+                    if preRoomSelect.user10 == user_name:
                         preRoomSelect.status10 = 'empty'
+                        preRoomSelect.user10 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot11:
+                    if preRoomSelect.user11 == user_name:
                         preRoomSelect.status11 = 'empty'
+                        preRoomSelect.user11 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot12:
+                    if preRoomSelect.user12 == user_name:
                         preRoomSelect.status12 = 'empty'
+                        preRoomSelect.user12 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot13:
+                    if preRoomSelect.user13 == user_name:
                         preRoomSelect.status13 = 'empty'
+                        preRoomSelect.user13 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot14:
+                    if preRoomSelect.user14 == user_name:
                         preRoomSelect.status14 = 'empty'
+                        preRoomSelect.user14 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot15:
+                    if preRoomSelect.user15 == user_name:
                         preRoomSelect.status15 = 'empty'
+                        preRoomSelect.user15 = 'none'
                         preRoomSelect.save()
+                    else:
+                        break
                 elif str(i) in cancel_slot16:
+                    if preRoomSelect.user16 == user_name:
                         preRoomSelect.status16 = 'empty'
+                        preRoomSelect.user16 = 'none'
                         preRoomSelect.save()
-                        
+                    else:
+                        break
+    list_status = [all_slot_room1.status1, all_slot_room1.status2]
+    list_number = [0, 1]
     context = { 'day':day,
                 'thisday':thisday,
                 'all_slot_room1':all_slot_room1,
-                'slot1':slot1, }
+                'slot1':slot1,
+                'list_status':list_status,
+                'list_number':list_number }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

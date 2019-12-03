@@ -1,4 +1,4 @@
-{% extends "app_mrbs/base1.html" %}
+{% extends "app_mrbs/base.html" %}
 
 {% block loginerror %}
 <!-- <!DOCTYPE html> -->
@@ -51,7 +51,7 @@
 			</tr>
 			{% else %}
 			<!-- <h1>Admin your comfm login</h1>  -->
-			<form action="{% url 'mrbs:admin-page' %}" method="post"> {% csrf_token %}
+			<form action="{% url 'mrbs:admin-page' 1 %}" method="post"> {% csrf_token %}
 			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
 			</tr>
 			{% endif %}

@@ -24,12 +24,14 @@ def homepage(request):
     all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
     all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
     all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
+    day_id = 1
     context = {
                 'all_slot_room1':all_slot_room1,
                 'all_slot_room2':all_slot_room2,
                 'all_slot_room3':all_slot_room3,
                 'all_slot_room4':all_slot_room4,
                 'all_slot_room5':all_slot_room5,
+                'day_id':day_id+3 ,
     }
     return render(request, 'app_mrbs/home_page.html',context)
 
@@ -61,6 +63,8 @@ def homepage_not1(request, day_id):
                 'all_slot_room3':all_slot_room3,
                 'all_slot_room4':all_slot_room4,
                 'all_slot_room5':all_slot_room5,
+                'day_id':day_id+3 ,
+
     }
     return render(request, 'app_mrbs/home_page.html',context)
 
@@ -90,12 +94,19 @@ def check_account(request):
 
         return render(request, 'app_mrbs/login_error.html', context=None)
 
-def admin(request):
+def admin(request, day_id):
+    thisday = RoomDay.objects.filter(day = int(day_id)) #เอาทุกห้องของวันนี้มา
+    all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
+    #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
+    all_slot_room2 = Timeslot.objects.filter(roomday = thisday[1])[0]
+    all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
+    all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
+    all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
+    
     if request.method == 'POST':
         day = 1
-        
-        IN_NAME = request.POST.get('username')
 
+        IN_NAME = request.POST.get('username')
         all_timeslot = Timeslot.objects.all()
         all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
         listofstatus = []
@@ -185,6 +196,11 @@ def admin(request):
             'username':IN_NAME ,
             'listofstatus':listofstatus ,
             'all_room':all_room ,
+            'all_slot_room1':all_slot_room1,
+            'all_slot_room2':all_slot_room2,
+            'all_slot_room3':all_slot_room3,
+            'all_slot_room4':all_slot_room4,
+            'all_slot_room5':all_slot_room5,
         }
         return render(request, 'app_mrbs/admin_page.html', context)
 
@@ -382,10 +398,7 @@ def booking_sort_room(request):
                 
                 
                
-               
-
-
-        
+            
 
         context = {
             'slot': slot ,
@@ -786,8 +799,11 @@ def pick_room(request, day_id):
     # list_status = [all_slot_room1.status1, all_slot_room1.status2]
     # list_number = [0, 1]
     IN_NAME = None
+    request.session['user_name'] = user_name
+
     if request.method == 'POST':
         IN_NAME = request.POST.get('username')
+
     context = { 'day':day,
                 'thisday':thisday,
                 'all_slot_room1':all_slot_room1,
@@ -795,6 +811,9 @@ def pick_room(request, day_id):
                 'all_slot_room3':all_slot_room3,
                 'all_slot_room4':all_slot_room4,
                 'all_slot_room5':all_slot_room5,
-                'username':IN_NAME, }
+                'username':user_name, 
+                'day_id':day_id+3 ,
+                
+                }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

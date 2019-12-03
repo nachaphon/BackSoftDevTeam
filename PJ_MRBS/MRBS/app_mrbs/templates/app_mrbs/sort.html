@@ -1,4 +1,3 @@
-  <!-- <!DOCTYPE html> -->
   {% extends "app_mrbs/base.html" %}
 
 
@@ -112,11 +111,16 @@
 </div>
 <!-- <div style = "position:absolute; left:400px; top:167px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+2" class="button">Room</font></strong></div> -->
 <div style = "position:absolute; left:50px; top:220px;" >
+{{result_slot}}
 {% for r in result %}
   <div> 
-      <form action="" method="post"> {% csrf_token %}
+      <form action="{% url 'mrbs:bookingforsort' %}" method="post"> {% csrf_token %}
     <!-- <strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">{{r.0.roomday.room }}</font></strong> -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>{{r.0.roomday.room }} </button> 
+    <!-- <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{slot}} name='username'></button>  -->
+    <!-- <input type="submit" class="form-control"  value={{slot}} name="slot" ></input> -->
+    {{r.1}}
+    <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value='[{{r.1}},{{username}}&{{r.0.roomday.room }}' name='username'>{{r.0.roomday.room }} </button> 
+    
      <strong style="text-align: center"><font color="#FFFFFF" size="+0" class="text">seat : {{ r.0.roomday.room.room_seat }} </font></strong>
     
       </form>
@@ -129,8 +133,12 @@
   <li>timeslot : {{ r.1 }}</li> -->
 {% endfor %}
 </div>
-
-
+<div style = "position:absolute; left:500px; top:500px;" >
+  <form action="{% url 'mrbs:user-page' %}" method="post"> {% csrf_token %}
+    <!-- <strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">{{r.0.roomday.room }}</font></strong> -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>Back </button> 
+  </form>
+</div>
 <!-- <div style = "position:absolute; left:10px; top:350px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">Room</font></strong></div>
 <div style = "position:absolute; left:20px; top:410px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">Slot</font></strong></div>
 <div style = "position:absolute; left:400px; top:380px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3"><a href="#"  class="button2">Go</a></font></strong></div> -->

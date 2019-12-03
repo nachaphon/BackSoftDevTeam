@@ -39,15 +39,18 @@
 </div>
 <a style = "position:absolute; left:220px; top:300px;" href="{% url 'mrbs:home-page' %}" class="button">Back</a>
 </div> -->
+
 <div class="modal-content col-xl-12">
-		<h1 align="center" class="modal-title">Please confirm booking<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h1>
+		<h1 align="center" class="modal-title">Please confirm booking <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h1>
 		
 	<div class="modal-body" align="center">
-		
+			slot is : {{listofslot}} {{room}}
+			<!-- {{all_timeslot}} -->
 			<form action="{% url 'mrbs:user-page' %}" method="post"> {% csrf_token %}
-			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
+			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value='{{username}}' name='username'>OK</button>
+			
 			</tr>
-		
+			</form>
 	</div>
 </div>
 

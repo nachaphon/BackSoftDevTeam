@@ -1,8 +1,9 @@
-{% extends "app_mrbs/base.html" %}
+<!-- {% extends "app_mrbs/base.html" %} -->
 
 {% block pickday %}
 <h1>Select day to book</h1>
   {% for day in all_day %}
     <li><a href="{% url 'mrbs:pick_room' day.id %}">{{ day }}</a></li>
   {% endfor %}
+  <li><a href="{% url 'mrbs:pick_room' day_1.id %}">{{ day_1 }}</a></li>
 {% endblock pickday %}

@@ -14,16 +14,16 @@
 
 .popup
 {
-	
+
 	border-radius: 25px;
 	position: absolute;
 	top: 300px;
 	left: 700px;
-	display:run-in; 
+	display:run-in;
 	justify-content: center;
 	align-items: center;
-    -webkit-animation-name: example; 
-    -webkit-animation-duration: 1s; 
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 1s;
     animation-name: example;
     animation-duration: 1s;
 }
@@ -41,12 +41,12 @@
 </div> -->
 <div class="modal-content col-xl-12">
 		<h1 align="center" class="modal-title">Please confirm login<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h1>
-		
+
 	<div class="modal-body" align="center">
-		
+
 			{% if status == 'user' %}
 			<!-- <h1>Please </h1>  -->
-			<form action="{% url 'mrbs:user-page' %}" method="post"> {% csrf_token %}
+			<form action="{% url 'mrbs:pick_room' 1 %}" method="post"> {% csrf_token %}
 			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
 			</tr>
 			{% else %}
@@ -55,16 +55,11 @@
 			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
 			</tr>
 			{% endif %}
-		
+
 	</div>
 </div>
 
 </div>
 </body>
-</html> 
+</html>
 {% endblock loginerror %}
-
-
-
-
-    

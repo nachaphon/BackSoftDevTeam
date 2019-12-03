@@ -5,7 +5,7 @@
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  
-    <a class="navbar-brand" href="">MRBS</a>
+    <a class="navbar-brand" href="#">MRBS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -20,6 +20,12 @@
 </nav>
 {% endblock content %}
 
+{% block pickday %}
+<!-- <h1>Select day to book</h1> -->
+  {% for day in all_day %}
+    <li><a href="{% url 'mrbs:pick_room' day.id %}">{{ day }}</a></li>
+  {% endfor %}
+{% endblock pickday %}
 
 
 {% block content1 %}

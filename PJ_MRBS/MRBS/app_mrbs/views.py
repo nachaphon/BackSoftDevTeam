@@ -7,6 +7,9 @@ from app_mrbs.models import Account, Day, Room, Timeslot ,RoomDay, Sortmodel
 from .forms import Sortform
 # from .forms import Timeslotform
 
+
+
+context_sort ={}
 # Create your views here.
 
 class HomePageView(TemplateView):
@@ -85,7 +88,6 @@ def check_account(request):
                 #     return render(request,'app_mrbs/admin_page.html',context)
 
 
-
         return render(request, 'app_mrbs/login_error.html', context=None)
 
 def admin(request):
@@ -101,83 +103,111 @@ def user(request):
         IN_NAME = request.POST.get('username')
         context = {
             'username':IN_NAME ,
+            'Sortform':Sortform,
         }
         return render(request, 'app_mrbs/pick_room.html', context)
 
 def sort_room(request):
-    day = 1
-    time = [12,30]
-    seat = 8
-    time_length_hr = 1 # hr ไม่เกิน  4 hr
-    time_length_min = 30 # min
-    if time_length_min == 30:
-        time_length_min = 1
-    slot_length = (time_length_hr*2) + time_length_min
-    all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
+    selected_period = None
+    selected_seat = None
+    if request.method == 'POST':
+        form = Sortform(request.POST)
+        IN_NAME = request.POST.get('username')
+        if form.is_valid():
+            selected_seat = form.cleaned_data['seat']
+            selected_period = form.cleaned_data['period']
+            day = 1
+            # time = [12,30]
+            seat = int(selected_seat) #int(request.POST.get('seat'))
+            # time_length = float(request.POST.get('hour'))
 
-    result = []
-    result_room = []
-    result_slot = []
+            time_length_hr = float(selected_period) # hr ไม่เกิน  4 hr
+            # time_length_min = '00'
+            slot_length = time_length_hr*2
 
-    all_slot = []
-    for i in all_room:
-        r1 = []
-        r1.append(i.status1)
-        r1.append(i.status2)
-        r1.append(i.status3)
-        r1.append(i.status4)
-        r1.append(i.status5)
-        r1.append(i.status6)
-        r1.append(i.status7)
-        r1.append(i.status8)
-        r1.append(i.status9)
-        r1.append(i.status10)
-        r1.append(i.status11)
-        r1.append(i.status12)
-        r1.append(i.status13)
-        r1.append(i.status14)
-        r1.append(i.status15)
-        r1.append(i.status16)
-        all_slot.append(r1)
+            # if request.POST.get('min') != '':
+            #     time_length_min = int(request.POST.get('min'))# min
+            #     if time_length_min == 30:
+            #         time_length_min = 1
+            #     slot_length = (time_length_hr*2) + time_length_min
 
+            all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
 
+            result = []
+            result_room = []
+            result_slot = []
 
-    for i in range(len(all_room)):
-        result_ = []
-        if int(all_room[i].roomday.room.room_seat) > seat:
-            count_slot_empty = 0
-            count_slot = 0
-            r_slot = []
-            for j in all_slot[i]:
-                count_slot += 1
-                if j == "empty":
-                    count_slot_empty += 1
-                    r_slot.append(count_slot)
-                else:
+            all_slot = []
+            for i in all_room:
+                r1 = []
+                r1.append(i.status1)
+                r1.append(i.status2)
+                r1.append(i.status3)
+                r1.append(i.status4)
+                r1.append(i.status5)
+                r1.append(i.status6)
+                r1.append(i.status7)
+                r1.append(i.status8)
+                r1.append(i.status9)
+                r1.append(i.status10)
+                r1.append(i.status11)
+                r1.append(i.status12)
+                r1.append(i.status13)
+                r1.append(i.status14)
+                r1.append(i.status15)
+                r1.append(i.status16)
+                all_slot.append(r1)
+
+            for i in range(len(all_room)):
+                result_ = []
+                if int(all_room[i].roomday.room.room_seat) >= seat:
                     count_slot_empty = 0
+                    count_slot = 0
                     r_slot = []
-                if count_slot_empty >= slot_length:
-                    result_slot.append(r_slot)
-                    result_room.append(all_room[i])
-                    result_.append(all_room[i])
-                    result_.append(r_slot)
-                    result.append(result_)
-                    break
+                    for j in all_slot[i]:
+                        count_slot += 1
+                        if j == "empty":
+                            count_slot_empty += 1
+                            r_slot.append(count_slot)
+                        else:
+                            count_slot_empty = 0
+                            r_slot = []
+                        if count_slot_empty >= slot_length:
+                            result_slot.append(r_slot)
+                            result_room.append(all_room[i])
+                            result_.append(all_room[i])
+                            result_.append(r_slot)
+                            result.append(result_)
+                            break
 
 
 
-    context = {'result_room':result_room ,
-               'all_room':all_room ,
-               'slot_length':slot_length,
-               'seat':seat,
-               'len_result_room':len(result_room),
-               'result_slot':result_slot,
-               'result':result,
+            context_sort = {'result_room':result_room ,
+                    'all_room':all_room ,
+                    'slot_length':int(slot_length),
+                    'seat':seat,
+                    'len_result_room':len(result_room),
+                    'result_slot':result_slot,
+                    'result':result,
+                    'time_length':time_length_hr ,
+                    'username':IN_NAME ,
 
+                    }
 
-            }
+            return render(request, 'app_mrbs/sort.html', context_sort)
+        else:
+            return render(request, 'app_mrbs/confirm_booking_sort.html', context_sort)
 
-    return render(request, 'app_mrbs/sort.html', context)
+def booking_sort_room(request):
+    if request.method == 'POST':
+        slot = request.POST.get('slot')
+        IN_NAME = request.POST.get('username')
+        context = {
+            'slot': slot ,
+            'username':IN_NAME ,
+        }
+        return render(request, 'app_mrbs/confirm_booking_sort.html',context )
+
 
 def sort_mix(request):
     selected_period = None

@@ -1,37 +1,145 @@
-<h1>Sort</h1>
-<!-- <li>{{ all_room }}</li> -->
-<!-- <li>{{ result }}</li> -->
-<h2>seat : {{seat }}</h2>
-<h2>slot : {{slot_length }}</h2>
+  <!-- <!DOCTYPE html> -->
+  {% extends "app_mrbs/base.html" %}
 
-<!-- {% for r in result %}
-<li>slot  : {{r }}</li>
-{% endfor %} -->
-<h2>result : {{ len_result_room }} room</h2>
 
-  {% for r in result %}
+  {% block loginerror %}
 
-    <li>{{ r.0 }}</li>
-    <li>timeslot : {{ r.1 }}</li>
-    <li>{{ r.0.status1 }}</li>
-    <li>{{ r.0.status2 }}</li>
-    <li>{{ r.0.status3 }}</li>
-    <li>{{ r.0.status4 }}</li>
-    <li>{{ r.0.status5 }}</li>
-    <li>{{ r.0.status6 }}</li>
-    <li>{{ r.0.status7 }}</li>
-    <li>{{ r.0.status8 }}</li>
-    <li>{{ r.0.status9 }}</li>
-    <li>{{ r.0.status10 }}</li>
-    <li>{{ r.0.status11 }}</li>
-    <li>{{ r.0.status12 }}</li>
-    <li>{{ r.0.status13 }}</li>
-    <li>{{ r.0.status14 }}</li>
-    <li>{{ r.0.status15 }}</li>
-    <li>{{ r.0.status16 }}</li>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name =viewport content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--<link rel="stylesheet" href="untitled.css">-->
+<title>Popup</title>
+<style>
+.button
+	{
+		border-radius: 25px;
+/*		box-shadow: 6px 6px 50px 1px white;*/
+		margin-top: 25px;
+		text-decoration: none;
+		transition: 0.4s;
+		background: white;
+		color: black;
+		padding: 5px 5px;
+		font-weight: bolder;
+/*		text-transform: uppercase;*/
+		font-size: 10px
+		-webkit-animation-name: example; 
+        -webkit-animation-duration: 0.5s; 
+        animation-name: example;
+        animation-duration: 0.5s;
 
-  
 
-    <!-- <li>{{ r.day }}</li> -->
-  {% endfor %}
- 
+	}
+.button:hover
+	{
+		background:black;
+		color: white;
+	}
+.popup
+	{
+/*		text-shadow: 1px 1px 1px white;*/
+		box-shadow: 10px 10px 50px 10px black;
+		background:orange;
+		width: 600px;
+		height: 600px;
+/*		border: 10px solid black;*/
+		border-radius: 20px;
+		position: absolute;
+		top: 200px;
+		left: 650px;
+		display:run-in; 
+		justify-content: center;
+		align-items: center;
+		-webkit-animation-name: example; 
+        -webkit-animation-duration: 1s; 
+        animation-name: example;
+        animation-duration: 1s;
+	}
+.popup:hover
+	{
+		background: pink;
+		color: black;
+	}
+.button2
+	{
+     		border-radius: 25px;
+		box-shadow: 10px 10px 50px 1px white;
+		margin-top: 25px;
+		text-decoration: none;
+		transition: 0.4s;
+		background: green;
+		color: white;
+		padding: 5px 5px;
+		font-weight: bolder;
+/*		text-transform: uppercase;*/
+		font-size: 10px
+		-webkit-animation-name : example; 
+    -webkit-animation-duration : 0.5s; 
+    animation-name: example;
+    animation-duration: 0.5s;
+	}
+.button2:hover
+	{
+		background: white;
+		color: green;
+	}
+.text
+	{
+		color:black;
+	}
+@-webkit-keyframes example {
+  from {background-color: white;}
+  to {background-color: orangered;}
+}
+@keyframes example {
+  from {background-color: white;}
+  to {background-color: orange;}
+}
+
+</style>
+</head>
+<body>
+<div class="popup">
+<!-- <div style = "position:absolute; left:10px; top:20px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">{{ username }}</font></strong></div> -->
+<div style = "position:absolute; left:10px; top:20px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+2" class="text" >Yourname :  {{ username }}   </font></strong></div>
+<div style = "position:absolute; left:10px; top:60px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+2" class="text" >You have selected :  {{seat }} seat. </font></strong></div>
+<div style = "position:absolute; left:10px; top:100px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+2" class="text">You have selected :  {{time_length }} hrs.</font></strong></div>
+<div style = "position:absolute; left:20px; top:105px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="text">___________________________________</font></strong></div>
+<div style = "position:absolute; left:50px; top:160px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">Result</font></strong> 
+  <strong style="text-align: center"><font color="#FFFFFF" size="+3" class="text">: {{ len_result_room }}  room. {{slot_length }} timeslot. </font></strong>
+</div>
+<!-- <div style = "position:absolute; left:400px; top:167px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+2" class="button">Room</font></strong></div> -->
+<div style = "position:absolute; left:50px; top:220px;" >
+{% for r in result %}
+  <div> 
+      <form action="" method="post"> {% csrf_token %}
+    <!-- <strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">{{r.0.roomday.room }}</font></strong> -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>{{r.0.roomday.room }} </button> 
+     <strong style="text-align: center"><font color="#FFFFFF" size="+0" class="text">seat : {{ r.0.roomday.room.room_seat }} </font></strong>
+    
+      </form>
+       <!-- <strong style="text-align: center"><font color="#FFFFFF" size="+2" class="text">timeslot : {{ r.1 }} </font></strong> -->
+  </div>
+  <!-- <div style = "position:absolute; left:20px; top:280px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">Slot</font></strong></div>
+  <div style = "position:absolute; left:400px; top:250px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3"><a href="#"  class="button2">Go</a></font></strong></div>
+  <div style = "position:absolute; left:20px; top:300px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" style="color:white" >___________________________________</font></strong></div> -->
+  <!-- <h1>{{ r.0.roomday.room }}  seat : {{ r.0.roomday.room.room_seat }}</h1>
+  <li>timeslot : {{ r.1 }}</li> -->
+{% endfor %}
+</div>
+
+
+<!-- <div style = "position:absolute; left:10px; top:350px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">Room</font></strong></div>
+<div style = "position:absolute; left:20px; top:410px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3" class="button">Slot</font></strong></div>
+<div style = "position:absolute; left:400px; top:380px;" ><strong style="text-align: center"><font color="#FFFFFF" size="+3"><a href="#"  class="button2">Go</a></font></strong></div> -->
+	
+	
+</div>
+
+
+</body>
+
+<!-- </html>  -->
+{% endblock loginerror %}

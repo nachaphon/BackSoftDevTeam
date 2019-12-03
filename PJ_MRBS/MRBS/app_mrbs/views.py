@@ -3,7 +3,8 @@ from django.views.generic import TemplateView
 from django.template import loader
 from django.http import HttpResponse
 from .templates import app_mrbs
-from app_mrbs.models import Account, Day, Room, Timeslot ,RoomDay
+from app_mrbs.models import Account, Day, Room, Timeslot ,RoomDay, Sortmodel
+from .forms import Sortform
 # from .forms import Timeslotform
 
 
@@ -155,6 +156,17 @@ def booking_sort_room(request):
         }
         return render(request, 'app_mrbs/confirm_booking_sort.html',context )
 
+
+def sort_mix(request):
+    selected_period = None
+    selected_seat = None
+    if request.method == 'POST':
+        form = Sortform(request.POST)
+        if form.is_valid():
+            selected_seat = form.cleaned_data['seat']
+            selected_period = form.cleaned_data['period']
+    context = {'Sortform':Sortform, 'selected_seat':selected_seat, 'selected_period':selected_period}
+    return render(request,  'app_mrbs/sort_mix.html', context)
 
 
 def pick_day(request):

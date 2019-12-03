@@ -204,11 +204,12 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status1}} name = 1>
+      
      {% else %}
      <form action="" method="post">
        {% csrf_token %}
        <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 81>
-     {% endif %}
+     </form> {% endif %}
 		</td><td>
       {% if all_slot_room2.status1 == "empty" %}
       <form action="" method="post">
@@ -218,7 +219,7 @@
        <form action="" method="post">
          {% csrf_token %}
          <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 97>
-       {% endif %}
+        </form> {% endif %}
     </td><td>
       {% if all_slot_room3.status1 == "empty" %}
       <form action="" method="post">
@@ -228,7 +229,7 @@
        <form action="" method="post">
          {% csrf_token %}
          <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 113>
-       {% endif %}
+        </form> {% endif %}
     </td><td>
       {% if all_slot_room4.status1 == "empty" %}
       <form action="" method="post">
@@ -238,7 +239,7 @@
        <form action="" method="post">
          {% csrf_token %}
          <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 129>
-       {% endif %}
+        </form> {% endif %}
     </td><td>
       {% if all_slot_room5.status1 == "empty" %}
       <form action="" method="post">
@@ -248,7 +249,7 @@
        <form action="" method="post">
          {% csrf_token %}
          <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 145>
-       {% endif %}
+        </form> {% endif %}
     </td>
 </tr>
 <tr>
@@ -263,7 +264,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 82>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status2 == "empty" %}
    <form action="" method="post">
@@ -273,7 +274,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 98>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status2 == "empty" %}
    <form action="" method="post">
@@ -283,7 +284,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 114>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status2 == "empty" %}
    <form action="" method="post">
@@ -293,7 +294,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 130>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status2 == "empty" %}
    <form action="" method="post">
@@ -303,7 +304,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 146>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -318,7 +319,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 83>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status3 == "empty" %}
    <form action="" method="post">
@@ -328,7 +329,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 99>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status3 == "empty" %}
    <form action="" method="post">
@@ -338,7 +339,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 115>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status3 == "empty" %}
    <form action="" method="post">
@@ -348,7 +349,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 131>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status3 == "empty" %}
    <form action="" method="post">
@@ -358,7 +359,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 147>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -373,7 +374,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 84>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status4 == "empty" %}
    <form action="" method="post">
@@ -383,7 +384,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 100>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status4 == "empty" %}
    <form action="" method="post">
@@ -393,7 +394,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 116>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status4 == "empty" %}
    <form action="" method="post">
@@ -403,7 +404,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 132>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status4 == "empty" %}
    <form action="" method="post">
@@ -413,7 +414,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 148>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -428,7 +429,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 85>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status5 == "empty" %}
    <form action="" method="post">
@@ -438,7 +439,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 101>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status5 == "empty" %}
    <form action="" method="post">
@@ -448,7 +449,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 117>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status5 == "empty" %}
    <form action="" method="post">
@@ -458,7 +459,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 133>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status5 == "empty" %}
    <form action="" method="post">
@@ -468,7 +469,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 149>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -483,7 +484,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 86>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status6 == "empty" %}
    <form action="" method="post">
@@ -493,7 +494,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 102>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status6 == "empty" %}
    <form action="" method="post">
@@ -503,7 +504,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 118>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status6 == "empty" %}
    <form action="" method="post">
@@ -513,7 +514,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 134>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status6 == "empty" %}
    <form action="" method="post">
@@ -523,7 +524,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 150>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -538,7 +539,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 87>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status7 == "empty" %}
    <form action="" method="post">
@@ -548,7 +549,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 103>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status7 == "empty" %}
    <form action="" method="post">
@@ -558,7 +559,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 119>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status7 == "empty" %}
    <form action="" method="post">
@@ -568,7 +569,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 135>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status7 == "empty" %}
    <form action="" method="post">
@@ -578,7 +579,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 151>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -593,7 +594,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 88>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status8 == "empty" %}
    <form action="" method="post">
@@ -603,7 +604,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 104>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status8 == "empty" %}
    <form action="" method="post">
@@ -613,7 +614,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 120>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status8 == "empty" %}
    <form action="" method="post">
@@ -623,7 +624,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 136>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status8 == "empty" %}
    <form action="" method="post">
@@ -633,7 +634,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 152>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -648,7 +649,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 89>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status9 == "empty" %}
    <form action="" method="post">
@@ -658,7 +659,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 105>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status9 == "empty" %}
    <form action="" method="post">
@@ -668,7 +669,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 121>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status9 == "empty" %}
    <form action="" method="post">
@@ -678,7 +679,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 137>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status9 == "empty" %}
    <form action="" method="post">
@@ -688,7 +689,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 153>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -703,7 +704,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 90>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status10 == "empty" %}
    <form action="" method="post">
@@ -713,7 +714,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 106>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status10 == "empty" %}
    <form action="" method="post">
@@ -723,7 +724,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 122>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status10 == "empty" %}
    <form action="" method="post">
@@ -733,7 +734,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 138>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status10 == "empty" %}
    <form action="" method="post">
@@ -743,7 +744,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 154>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -758,7 +759,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 91>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status11 == "empty" %}
    <form action="" method="post">
@@ -768,7 +769,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 107>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status11 == "empty" %}
    <form action="" method="post">
@@ -778,7 +779,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 123>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status11 == "empty" %}
    <form action="" method="post">
@@ -788,7 +789,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 139>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status11 == "empty" %}
    <form action="" method="post">
@@ -798,7 +799,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 155>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -813,7 +814,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 92>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status12 == "empty" %}
    <form action="" method="post">
@@ -823,7 +824,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 108>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status12 == "empty" %}
    <form action="" method="post">
@@ -833,7 +834,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 124>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status12 == "empty" %}
    <form action="" method="post">
@@ -843,7 +844,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 140>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status12 == "empty" %}
    <form action="" method="post">
@@ -853,7 +854,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 156>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -868,7 +869,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 93>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status13 == "empty" %}
    <form action="" method="post">
@@ -878,7 +879,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 109>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status13 == "empty" %}
    <form action="" method="post">
@@ -888,7 +889,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 125>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status13 == "empty" %}
    <form action="" method="post">
@@ -898,7 +899,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 141>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status13 == "empty" %}
    <form action="" method="post">
@@ -908,7 +909,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 157>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -923,7 +924,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 94>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status14 == "empty" %}
    <form action="" method="post">
@@ -933,7 +934,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 110>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status14 == "empty" %}
    <form action="" method="post">
@@ -943,7 +944,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 126>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status14 == "empty" %}
    <form action="" method="post">
@@ -953,7 +954,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 142>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status14 == "empty" %}
    <form action="" method="post">
@@ -963,7 +964,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 158>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -978,7 +979,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 95>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status15 == "empty" %}
    <form action="" method="post">
@@ -988,7 +989,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 111>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status15 == "empty" %}
    <form action="" method="post">
@@ -998,7 +999,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 127>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status15 == "empty" %}
    <form action="" method="post">
@@ -1008,7 +1009,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name =143>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status15 == "empty" %}
    <form action="" method="post">
@@ -1018,7 +1019,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 159>
-    {% endif %}
+    </form> {% endif %}
  </td>
 </tr>
 <tr>
@@ -1033,7 +1034,7 @@
   <form action="" method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 96>
-  {% endif %}
+  </form> {% endif %}
  </td><td>
    {% if all_slot_room2.status16 == "empty" %}
    <form action="" method="post">
@@ -1043,7 +1044,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 112>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room3.status16 == "empty" %}
    <form action="" method="post">
@@ -1053,7 +1054,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 128>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room4.status16 == "empty" %}
    <form action="" method="post">
@@ -1063,7 +1064,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 144>
-    {% endif %}
+    </form> {% endif %}
  </td><td>
    {% if all_slot_room5.status16 == "empty" %}
    <form action="" method="post">
@@ -1073,7 +1074,7 @@
     <form action="" method="post">
       {% csrf_token %}
       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 160>
-    {% endif %}
+    </form> {% endif %}
  </td>
 
 </tr></table>

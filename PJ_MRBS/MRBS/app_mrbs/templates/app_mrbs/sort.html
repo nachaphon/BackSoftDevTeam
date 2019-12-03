@@ -2,17 +2,22 @@
 <!-- <li>{{ all_room }}</li> -->
 <!-- <li>{{ result }}</li> -->
 <h2>seat : {{seat }}</h2>
-<h2>slot : {{slot_length }}</h2>
+<h2>time_length : {{time_length_hr }} : {{time_length_min}} hr </h2>
+
+
 
 <!-- {% for r in result %}
 <li>slot  : {{r }}</li>
 {% endfor %} -->
 <h2>result : {{ len_result_room }} room</h2>
+<h2>slot : {{slot_length }}</h2>
 
   {% for r in result %}
 
-    <li>{{ r.0 }}</li>
+    <h1>{{ r.0.roomday.room }}  seat : {{ r.0.roomday.room.room_seat }}</h1>
     <li>timeslot : {{ r.1 }}</li>
+    <form action="{% url 'mrbs:bookingforsort' %}" method="post"> {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value='{{r.1 }}' name='slot'>Booking</button>
     <li>{{ r.0.status1 }}</li>
     <li>{{ r.0.status2 }}</li>
     <li>{{ r.0.status3 }}</li>
@@ -29,6 +34,7 @@
     <li>{{ r.0.status14 }}</li>
     <li>{{ r.0.status15 }}</li>
     <li>{{ r.0.status16 }}</li>
+
 
   
 

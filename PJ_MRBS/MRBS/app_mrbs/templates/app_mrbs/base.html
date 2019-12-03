@@ -206,18 +206,13 @@
 
 		
 
-<div class="col-xl-10">
+<div class="col-xl-12">
 	<br><br>			  
 	<br><br>
 <tr>
 <table class="table table-bordered calendar">
 <tbody><tr>
 <!--<th class="text-center bg-info">&nbsp;</th>-->
-
-
-	
-
-
 
 <th class="text-center month_header bg-warning" colspan="6">November&nbsp;2019</th>
 </tr>
@@ -493,8 +488,9 @@
 <div id="loginpop" class="modal fade" role="dialog">
   <div class="modal-dialog modal-login modelCenter">
 		<div class="modal-content col-xl-12">
-				<h2 align="center" class="modal-title">Login <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2>
-
+				<h1 align="center" class="modal-title" >Please login<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h1>
+				<!-- <h2 align="center" class="modal-title"> Login <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2> -->
+				<!-- <h2 align="center" class="modal-title">Login </h2> -->
 			<div class="modal-body">
 				<form action="{% url 'mrbs:ck' %}" method="post"> {% csrf_token %}
 					<div class="form-group">
@@ -512,6 +508,32 @@
   </div>
 </div>
 
+<!-- ----------------------------- Sort --------------------------------------- -->
+<div id="sortpop" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-login modelCenter">
+			  <div class="modal-content col-xl-12">
+					  <h2 align="center" class="modal-title">Sort <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></h2>
+	  
+				  <div class="modal-body">
+					  <form action="{% url 'mrbs:sort' %}" method="post"> {% csrf_token %}
+						  <div class="form-group">
+							  <li>seat</li><input type="number" class="form-control" name="seat" placeholder="seat" required="required">
+						  </div>
+						  <div class="form-group">
+							  <input type="number" class="form-control" name="hour" placeholder="hour" required="required">
+						  </div>
+						  <div class="form-group">
+								<input type="number" class="form-control" name="min" placeholder="min : 30 or None" default=0  >
+							</div>
+						  <div class="form-group">
+							  <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Sort</button>
+						  </div>
+					  </form>
+				  </div>
+			  </div>
+		</div>
+	  </div>
+	  
 <!---------------------------------------------------------Availiable----------------------------------------->
 
 <div id="AvailiableModal" class="modal fade" role="dialog">

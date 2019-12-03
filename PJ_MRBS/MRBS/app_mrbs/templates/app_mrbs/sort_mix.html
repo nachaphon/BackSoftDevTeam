@@ -1,0 +1,7 @@
+<form method="Post" action="" >
+    {% csrf_token %}
+    {{Sortform}}
+    <input type="submit" value="Select">
+</form>
+<li>You have selected : {{selected_seat}} seat.</li>
+<li>You have selected : {{selected_period}} hrs.</li>

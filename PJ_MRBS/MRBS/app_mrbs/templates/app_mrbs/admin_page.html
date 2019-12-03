@@ -1,4 +1,4 @@
-{% extends "app_mrbs/base.html" %}
+{% extends "app_mrbs/base1.html" %}
 
 
 {% block content %}
@@ -8,11 +8,15 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:admin-page'%}">Home <span class="sr-only">(current)</span></a> </li>
-        <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:sort'%}">Find <span class="sr-only">(current)</span></a> </li>
+          <form action="{% url 'mrbs:admin-page' %}" method="post"> {% csrf_token %}
+              <!-- <li class="nav-item active" value="reserve" name=username ></li>> <a class="nav-link" href="{% url 'mrbs:user-page'%}">Home <span class="sr-only">(current)</span></a> </li> -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>Home</button>
+            </form>
+        <!-- <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:admin-page'%}">Home <span class="sr-only">(current)</span></a> </li> -->
+        <!-- <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:sort'%}">Find <span class="sr-only">(current)</span></a> </li> -->
       </ul>
       <form class="form-inline my-2 my-lg-0">
-<button type="button" class="btn btn-light" data-toggle="modal" data-target="#loginpop">{{username}}</button>
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#">{{username}}</button>
   <ul class="navbar-nav mr-auto">
   <li class="nav-item active"> <a class="nav-link" href="{% url 'mrbs:home-page'%}">Logout <span class="sr-only">(current)</span></a> </li>
     </ul>
@@ -21,3 +25,259 @@
     
 </nav>
 {% endblock content %}
+
+
+
+{% block content2 %}
+{{all_room}}
+<div class="col-xl-12">
+    <br><br>			  
+    <br><br>
+  <tr>
+  <table class="table table-bordered calendar">
+  <tbody><tr>
+  <!--<th class="text-center bg-info">&nbsp;</th>-->
+  
+  <th class="text-center month_header bg-warning" colspan="6">November&nbsp;2019</th>
+  </tr>
+  
+  <tr class="table-warning">
+  <th class="day_header"><strong>Time</strong></th>
+    <th class="room_1" data-toggle="modal" data-target="#Equipment1" style="cursor:pointer">ROOM 1</th>
+    <th class="room_2" data-toggle="modal" data-target="#Equipment2" style="cursor:pointer">ROOM 2</th>
+    <th class="room_3" data-toggle="modal" data-target="#Equipment3" style="cursor:pointer">ROOM 3</th>
+    <th class="room_4" data-toggle="modal" data-target="#Equipment4" style="cursor:pointer">ROOM 4</th>
+    <th class="room_5" data-toggle="modal" data-target="#Equipment5" style="cursor:pointer">ROOM 5</th>
+  
+  
+  <tr>
+  <td><strong>8:30-9:00</strong><br></td>
+    <td>
+                                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">{{ listofstatus.0 }}</button></span>
+                          </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">{{ listofstatus.1 }}</button></span>
+                                  </td><td>
+                                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">{{ listofstatus.2 }}</button></span>
+                                  </td><td>
+                                            <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  
+  <tr>
+  <td><strong>9:00-9:30</strong><br></td>
+    <td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                                        <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                   <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  
+  <tr>
+  <td><strong>9:30-10:00</strong><br></td>
+    <td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                          <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                      <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  
+  <tr>
+  <td><strong>10:00-10:30</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>10:30-11:00</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>11:00-11:30</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>11:30-12:00</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>12:00-12:30</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>12:30-13:00</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>13:00-13:30</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>13:30-14:00</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>14:00-14:30</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>14:30-15:00</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>15:00-15:30</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>15:30-16:00</strong><br></td>
+    <td>
+                                       <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                </td><td>
+                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                     <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                         <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td><td>
+                                           <span class="badge"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AvailiableModal">Availiable</button></span>
+                                  </td>
+  </tr>
+  <tr>
+  <td><strong>16:00-16:30</strong><br></td>
+    <td>
+                                   <input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
+                </td><td>
+                               <input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
+                                  </td><td>
+                                     <input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
+                                  </td><td>
+                                         <input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
+                                  </td><td>
+                      <input type="checkbox" checked data-toggle="toggle" data-on="Availiable" data-off="BOOKED" data-onstyle="success" data-offstyle="danger">
+  
+                                    </td>
+  </tr></table>
+  
+      </div>
+{% endblock content2 %}

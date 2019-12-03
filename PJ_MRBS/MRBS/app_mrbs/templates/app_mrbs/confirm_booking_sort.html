@@ -46,7 +46,7 @@
 	<div class="modal-body" align="center">
 			slot is : {{listofslot}} {{room}}
 			<!-- {{all_timeslot}} -->
-			<form action="{% url 'mrbs:user-page' %}" method="post"> {% csrf_token %}
+			<form action="{% url 'mrbs:pick_room' 1 %}" method="post"> {% csrf_token %}
 			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value='{{username}}' name='username'>OK</button>
 			
 			</tr>

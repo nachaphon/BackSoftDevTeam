@@ -103,106 +103,106 @@ def admin(request, day_id):
     all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
     all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
     
-    if request.method == 'POST':
-        day = 1
+    # if request.method == 'POST':
+    #     day = 1
 
-        IN_NAME = request.POST.get('username')
-        all_timeslot = Timeslot.objects.all()
-        all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
-        listofstatus = []
-        for i in all_room:
-            if i.user1 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user1)
+    #     IN_NAME = request.POST.get('username')
+    #     all_timeslot = Timeslot.objects.all()
+    #     all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
+    #     listofstatus = []
+    #     for i in all_room:
+    #         if i.user1 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user1)
 
-            if i.user2 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user2)
+    #         if i.user2 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user2)
 
-            if i.user3 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user3)
+    #         if i.user3 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user3)
             
-            if i.user4 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user4)
+    #         if i.user4 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user4)
 
-            if i.user5 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user5)
+    #         if i.user5 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user5)
 
-            if i.user6 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user6)
+    #         if i.user6 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user6)
 
-            if i.user7 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user7)
+    #         if i.user7 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user7)
 
-            if i.user8 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user8)
+    #         if i.user8 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user8)
 
-            if i.user9 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user9)
+    #         if i.user9 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user9)
 
-            if i.user10 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user10)
+    #         if i.user10 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user10)
 
-            if i.user11 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user11)
+    #         if i.user11 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user11)
 
-            if i.user12 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user12)
+    #         if i.user12 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user12)
 
-            if i.user13 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user13)
+    #         if i.user13 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user13)
 
-            if i.user14 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user14)
+    #         if i.user14 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user14)
 
-            if i.user15 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user15)
+    #         if i.user15 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user15)
 
-            if i.user16 == 'none':
-                listofstatus.append('empty')
-            else:
-                listofstatus.append(i.user16)
+    #         if i.user16 == 'none':
+    #             listofstatus.append('empty')
+    #         else:
+    #             listofstatus.append(i.user16)
 
 
-        context = {
-            'username':IN_NAME ,
-            'listofstatus':listofstatus ,
-            'all_room':all_room ,
-            'all_slot_room1':all_slot_room1,
-            'all_slot_room2':all_slot_room2,
-            'all_slot_room3':all_slot_room3,
-            'all_slot_room4':all_slot_room4,
-            'all_slot_room5':all_slot_room5,
-        }
-        return render(request, 'app_mrbs/admin_page.html', context)
+    context = {
+        # 'username':IN_NAME ,
+        # 'listofstatus':listofstatus ,
+        # 'all_room':all_room ,
+        'all_slot_room1':all_slot_room1,
+        'all_slot_room2':all_slot_room2,
+        'all_slot_room3':all_slot_room3,
+        'all_slot_room4':all_slot_room4,
+        'all_slot_room5':all_slot_room5,
+    }
+    return render(request, 'app_mrbs/admin_page.html', context)
 
 def user(request):
     if request.method == 'POST':
@@ -813,7 +813,7 @@ def pick_room(request, day_id):
                 'all_slot_room5':all_slot_room5,
                 'username':user_name, 
                 'day_id':day_id+3 ,
-                
+                'Sortform':Sortform
                 }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

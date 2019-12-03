@@ -44,17 +44,9 @@
 		
 	<div class="modal-body" align="center">
 		
-			{% if status == 'user' %}
-			<!-- <h1>Please </h1>  -->
 			<form action="{% url 'mrbs:user-page' %}" method="post"> {% csrf_token %}
 			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
 			</tr>
-			{% else %}
-			<!-- <h1>Admin your comfm login</h1>  -->
-			<form action="{% url 'mrbs:admin-page' %}" method="post"> {% csrf_token %}
-			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
-			</tr>
-			{% endif %}
 		
 	</div>
 </div>

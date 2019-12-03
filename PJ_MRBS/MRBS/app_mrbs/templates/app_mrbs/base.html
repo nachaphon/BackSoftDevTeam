@@ -516,17 +516,20 @@
 	  
 				  <div class="modal-body">
 					  <form action="{% url 'mrbs:sort' %}" method="post"> {% csrf_token %}
-						  <div class="form-group">
+							{{Sortform}}
+							<!-- <input type="submit" value="Select"> -->
+						  <!-- <div class="form-group">
 							  <li>seat</li><input type="number" class="form-control" name="seat" placeholder="seat" required="required">
 						  </div>
 						  <div class="form-group">
 							  <input type="number" class="form-control" name="hour" placeholder="hour" required="required">
-						  </div>
+						  </div> -->
+						  <!-- <div class="form-group">
+								<input type="text" class="form-control" name="min" placeholder="min : 30 or None" default=0  >
+							</div> -->
+ 							
 						  <div class="form-group">
-								<input type="number" class="form-control" name="min" placeholder="min : 30 or None" default=0  >
-							</div>
-						  <div class="form-group">
-							  <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Sort</button>
+							  <button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>Sort</button>
 						  </div>
 					  </form>
 				  </div>

@@ -1,0 +1,876 @@
+<td>
+ {% if all_slot_room1.status1 == "empty" %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status1}} name = 1>
+  {% else %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 81>
+  {% endif %}
+ </td><td>
+   {% if all_slot_room2.status1 == "empty" %}
+   <form action="" method="post">
+     {% csrf_token %}
+     <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status1}} name = 17>
+    {% else %}
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 97>
+    {% endif %}
+ </td><td>
+   {% if all_slot_room3.status1 == "empty" %}
+   <form action="" method="post">
+     {% csrf_token %}
+     <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status1}} name = 33>
+    {% else %}
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 113>
+    {% endif %}
+ </td><td>
+   {% if all_slot_room4.status1 == "empty" %}
+   <form action="" method="post">
+     {% csrf_token %}
+     <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status1}} name = 49>
+    {% else %}
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 129>
+    {% endif %}
+ </td><td>
+   {% if all_slot_room5.status1 == "empty" %}
+   <form action="" method="post">
+     {% csrf_token %}
+     <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status1}} name = 65>
+    {% else %}
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 145>
+    {% endif %}
+ </td>
+</tr>
+<tr>
+<td><strong>9:00-9:30</strong><br></td>
+<!-- column 2-->
+<td>
+{% if all_slot_room1.status2 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status2}} name = 2>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 82>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status2 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status2}} name = 18>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 98>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status2 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status2}} name = 34>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 114>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status2 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status2}} name = 50>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 130>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status2 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status2}} name = 66>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 146>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>9:30-10:00</strong><br></td>
+<!-- column 3-->
+<td>
+{% if all_slot_room1.status3 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status3}} name = 3>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 83>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status3 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status3}} name = 19>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 99>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status3 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status3}} name = 35>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 115>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status3 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status3}} name = 51>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 131>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status3 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status3}} name = 67>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 147>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>10:00-10:30</strong><br></td>
+<!-- column 4-->
+<td>
+{% if all_slot_room1.status4 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status4}} name = 4>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 84>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status4 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status4}} name = 20>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 100>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status4 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status4}} name = 36>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 116>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status4 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status4}} name = 52>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 132>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status4 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status4}} name = 68>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 148>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>10:30-11:00</strong><br></td>
+<!-- column 5-->
+<td>
+{% if all_slot_room1.status5 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status5}} name = 5>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 85>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status5 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status5}} name = 21>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 101>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status5 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status5}} name = 37>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 117>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status5 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status5}} name = 53>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 133>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status5 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status5}} name =69>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 149>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>11:00-11:30</strong><br></td>
+<!-- column 6-->
+<td>
+{% if all_slot_room1.status6 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status6}} name = 6>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 86>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status6 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status6}} name = 22>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 102>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status6 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status6}} name = 38>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 118>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status6 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status6}} name = 54>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 134>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status6 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status6}} name = 70>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 150>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>11:30-12:00</strong><br></td>
+<!-- column 7-->
+<td>
+{% if all_slot_room1.status7 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status7}} name = 7>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 87>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status7 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status7}} name = 23>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 103>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status7 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status7}} name = 39>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 119>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status7 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status7}} name = 55>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 135>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status7 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status7}} name = 71>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 151>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>12:00-12:30</strong><br></td>
+<!-- column 8-->
+<td>
+{% if all_slot_room1.status8 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status8}} name = 8>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 88>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status8 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status8}} name = 24>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 104>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status8 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status8}} name = 40>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 120>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status8 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status8}} name = 56>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 136>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status8 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status8}} name = 72>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 152>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>12:30-13:00</strong><br></td>
+<!-- column 9-->
+<td>
+{% if all_slot_room1.status9 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status9}} name = 9>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 89>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status9 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status9}} name = 25>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 105>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status9 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status9}} name = 41>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 121>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status9 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status9}} name = 57>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 137>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status9 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status9}} name = 73>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 153>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>13:00-13:30</strong><br></td>
+<!-- column 10-->
+<td>
+{% if all_slot_room1.status10 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status10}} name = 10>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 90>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status10 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status10}} name = 26>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 106>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status10 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status10}} name = 42>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 122>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status10 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status10}} name = 58>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 138>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status10 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status10}} name = 74>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 154>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>13:30-14:00</strong><br></td>
+<!-- column 11-->
+<td>
+{% if all_slot_room1.status11 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status11}} name = 11>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 91>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status11 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status11}} name = 27>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 107>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status11 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status11}} name = 43>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 123>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status11 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status11}} name = 59>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 139>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status11 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status11}} name = 75>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 155>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>14:00-14:30</strong><br></td>
+<!-- column 12-->
+<td>
+{% if all_slot_room1.status12 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status12}} name = 12>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 92>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status12 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status12}} name = 28>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 108>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status12 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status12}} name = 44>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 124>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status12 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status12}} name = 60>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 140>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status12 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status12}} name = 76>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 156>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>14:30-15:00</strong><br></td>
+<!-- column 13-->
+<td>
+{% if all_slot_room1.status13 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status13}} name = 13>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 93>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status13 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status13}} name = 29>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 109>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status13 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status13}} name = 45>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 125>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status13 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status13}} name = 61>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 141>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status13 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status13}} name = 77>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 157>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>15:00-15:30</strong><br></td>
+<!-- column 14-->
+<td>
+{% if all_slot_room1.status14 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status14}} name = 14>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 94>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status14 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status14}} name = 30>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 110>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status14 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status14}} name = 46>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 126>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status14 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status14}} name = 62>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 142>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status14 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status14}} name = 78>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 158>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>15:30-16:00</strong><br></td>
+<!-- column 15-->
+<td>
+{% if all_slot_room1.status15 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status15}} name = 15>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 95>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status15 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status15}} name = 31>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 111>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status15 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status15}} name = 47>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 127>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status15 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status15}} name = 63>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name =143>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status15 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status15}} name = 79>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 159>
+ {% endif %}
+</td>
+</tr>
+<tr>
+<td><strong>16:00-16:30</strong><br></td>
+<!-- column 16-->
+<td>
+{% if all_slot_room1.status16 == "empty" %}
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status16}} name = 16>
+{% else %}
+<form action="" method="post">
+ {% csrf_token %}
+ <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 96>
+{% endif %}
+</td><td>
+{% if all_slot_room2.status16 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room2.status16}} name = 32>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 112>
+ {% endif %}
+</td><td>
+{% if all_slot_room3.status16 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room3.status16}} name = 48>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 128>
+ {% endif %}
+</td><td>
+{% if all_slot_room4.status16 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room4.status16}} name = 64>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 144>
+ {% endif %}
+</td><td>
+{% if all_slot_room5.status16 == "empty" %}
+<form action="" method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room5.status16}} name = 80>
+ {% else %}
+ <form action="" method="post">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 160>
+ {% endif %}
+</td>

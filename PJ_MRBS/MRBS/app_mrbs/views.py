@@ -14,8 +14,50 @@ class HomePageView(TemplateView):
         return render(request, 'app_mrbs/index.html', context=None)
 
 def homepage(request):
-    all_day = Day.objects.all()
-    context = {'all_day':all_day ,
+    thisday = RoomDay.objects.filter(day = 1) #เอาทุกห้องของวันนี้มา
+    all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
+    #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
+    all_slot_room2 = Timeslot.objects.filter(roomday = thisday[1])[0]
+    all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
+    all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
+    all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
+    context = {
+                'all_slot_room1':all_slot_room1,
+                'all_slot_room2':all_slot_room2,
+                'all_slot_room3':all_slot_room3,
+                'all_slot_room4':all_slot_room4,
+                'all_slot_room5':all_slot_room5,
+    }
+    return render(request, 'app_mrbs/home_page.html',context)
+
+def homepage_not1(request, day_id):
+    if day_id == '%2F1':
+        day_id = 1
+    if day_id == '%2F2':
+        day_id = 2
+    if day_id == '%2F3':
+        day_id = 3
+    if day_id == '%2F4':
+        day_id = 4
+    if day_id == '%2F5':
+        day_id = 5
+    if day_id == '%2F6':
+        day_id = 6
+    if day_id == '%2F7':
+        day_id = 7
+    thisday = RoomDay.objects.filter(day = day_id) #เอาทุกห้องของวันนี้มา
+    all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
+    #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
+    all_slot_room2 = Timeslot.objects.filter(roomday = thisday[1])[0]
+    all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
+    all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
+    all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
+    context = {
+                'all_slot_room1':all_slot_room1,
+                'all_slot_room2':all_slot_room2,
+                'all_slot_room3':all_slot_room3,
+                'all_slot_room4':all_slot_room4,
+                'all_slot_room5':all_slot_room5,
     }
     return render(request, 'app_mrbs/home_page.html',context)
 
@@ -23,7 +65,7 @@ def homepage2(request):
     return render(request, 'app_mrbs/base0.html')
 
 
-def check_account(request): 
+def check_account(request):
     if request.method == 'POST':
         IN_ID = request.POST.get('id')
         IN_PASSWORD = request.POST.get('password')
@@ -38,13 +80,11 @@ def check_account(request):
 
                 # if i.status == "user":
                 #     return render(request,'app_mrbs/user_page.html',context)
-                  
+
                 # elif i.status == "admin":
                 #     return render(request,'app_mrbs/admin_page.html',context)
-                    return render(request,'app_mrbs/user_page.html',context)
-                elif i.status == "admin":
-                    return render(request,'app_mrbs/admin_page.html',context)
-                break
+
+
 
         return render(request, 'app_mrbs/login_error.html', context=None)
 
@@ -56,13 +96,13 @@ def admin(request):
         }
         return render(request, 'app_mrbs/admin_page.html', context)
 
-def user(request):  
+def user(request):
     if request.method == 'POST':
         IN_NAME = request.POST.get('username')
         context = {
             'username':IN_NAME ,
         }
-        return render(request, 'app_mrbs/user_page.html', context)
+        return render(request, 'app_mrbs/pick_room.html', context)
 
 def sort_room(request):
     day = 1
@@ -153,8 +193,22 @@ def sort_mix(request):
 
 def pick_day(request):
     all_day = Day.objects.all()
-    context = {'all_day':all_day}
-    return render(request, 'app_mrbs/pick_day.html', context)
+    day1 = all_day[0]
+    day2 = all_day[1]
+    day3 = all_day[2]
+    day4 = all_day[3]
+    day5 = all_day[4]
+    day6 = all_day[5]
+    day7 = all_day[6]
+    context = {'all_day':all_day,
+    'day1':day1,
+    'day2':day2,
+    'day3':day3,
+    'day4':day4,
+    'day5':day5,
+    'day6':day6,
+    'day7':day7,}
+    return render(request, 'app_mrbs/test.html', context)
 
 def pick_room(request, day_id):
     day = get_object_or_404(Day, pk = day_id)
@@ -165,7 +219,7 @@ def pick_room(request, day_id):
     all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
     all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
     all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
-    slot1 = all_slot_room1.status1
+    # slot1 = all_slot_room1.status1
     room_list = [all_slot_room1, all_slot_room2, all_slot_room3, all_slot_room4, all_slot_room5]
     # status1 = slot1.status1
     reserve_slot1 = []
@@ -267,7 +321,8 @@ def pick_room(request, day_id):
         cancel_slot16.append(str(i))
 
     user_name = request.session.get('user_name')
-
+    if user_name == None:
+        user_name = 'None'
     if request.POST:
         for i in range(1, 161):
             if str(i) in request.POST:
@@ -283,112 +338,112 @@ def pick_room(request, day_id):
                     preRoomSelect = room_list[4]
                 # all_slot_room1.status1 = 'full'
                 if str(i) in reserve_slot1:
-                    if preRoomSelect.status1 == 'empty':
+                    if preRoomSelect.status1 == 'empty' and user_name != 'None':
                         preRoomSelect.status1 = 'full'
                         preRoomSelect.user1 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot2:
-                    if preRoomSelect.status2 == 'empty':
+                    if preRoomSelect.status2 == 'empty' and user_name != 'None':
                         preRoomSelect.status2 = 'full'
                         preRoomSelect.user2 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot3:
-                    if preRoomSelect.status3 == 'empty':
+                    if preRoomSelect.status3 == 'empty' and user_name != 'None':
                         preRoomSelect.status3 = 'full'
                         preRoomSelect.user3 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot4:
-                    if preRoomSelect.status4 == 'empty':
+                    if preRoomSelect.status4 == 'empty' and user_name != 'None':
                         preRoomSelect.status4 = 'full'
                         preRoomSelect.user4 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot5:
-                    if preRoomSelect.status5 == 'empty':
+                    if preRoomSelect.status5 == 'empty' and user_name != 'None':
                         preRoomSelect.status5 = 'full'
                         preRoomSelect.user5 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot6:
-                    if preRoomSelect.status6 == 'empty':
+                    if preRoomSelect.status6 == 'empty' and user_name != 'None':
                         preRoomSelect.status6 = 'full'
                         preRoomSelect.user6 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot7:
-                    if preRoomSelect.status7 == 'empty':
+                    if preRoomSelect.status7 == 'empty' and user_name != 'None':
                         preRoomSelect.status7 = 'full'
                         preRoomSelect.user7 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot8:
-                    if preRoomSelect.status8 == 'empty':
+                    if preRoomSelect.status8 == 'empty' and user_name != 'None':
                         preRoomSelect.status8 = 'full'
                         preRoomSelect.user8 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot9:
-                    if preRoomSelect.status9 == 'empty':
+                    if preRoomSelect.status9 == 'empty' and user_name != 'None':
                         preRoomSelect.status9 = 'full'
                         preRoomSelect.user9 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot10:
-                    if preRoomSelect.status10 == 'empty':
+                    if preRoomSelect.status10 == 'empty' and user_name != 'None':
                         preRoomSelect.status10 = 'full'
                         preRoomSelect.user10 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot11:
-                    if preRoomSelect.status11 == 'empty':
+                    if preRoomSelect.status11 == 'empty' and user_name != 'None':
                         preRoomSelect.status11 = 'full'
                         preRoomSelect.user11 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot12:
-                    if preRoomSelect.status12 == 'empty':
+                    if preRoomSelect.status12 == 'empty' and user_name != 'None':
                         preRoomSelect.status12 = 'full'
                         preRoomSelect.user12 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot13:
-                    if preRoomSelect.status13 == 'empty':
+                    if preRoomSelect.status13 == 'empty' and user_name != 'None':
                         preRoomSelect.status13 = 'full'
                         preRoomSelect.user13 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot14:
-                    if preRoomSelect.status14 == 'empty':
+                    if preRoomSelect.status14 == 'empty' and user_name != 'None':
                         preRoomSelect.status14 = 'full'
                         preRoomSelect.user14 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot15:
-                    if preRoomSelect.status15 == 'empty':
+                    if preRoomSelect.status15 == 'empty' and user_name != 'None':
                         preRoomSelect.status15 = 'full'
                         preRoomSelect.user15 = user_name
                         preRoomSelect.save()
                     else:
                         break
                 elif str(i) in reserve_slot16:
-                    if preRoomSelect.status16 == 'empty':
+                    if preRoomSelect.status16 == 'empty' and user_name != 'None':
                         preRoomSelect.status16 = 'full'
                         preRoomSelect.user16 = user_name
                         preRoomSelect.save()
@@ -509,13 +564,18 @@ def pick_room(request, day_id):
                         preRoomSelect.save()
                     else:
                         break
-    list_status = [all_slot_room1.status1, all_slot_room1.status2]
-    list_number = [0, 1]
+    # list_status = [all_slot_room1.status1, all_slot_room1.status2]
+    # list_number = [0, 1]
+    IN_NAME = None
+    if request.method == 'POST':
+        IN_NAME = request.POST.get('username')
     context = { 'day':day,
                 'thisday':thisday,
                 'all_slot_room1':all_slot_room1,
-                'slot1':slot1,
-                'list_status':list_status,
-                'list_number':list_number }
+                'all_slot_room2':all_slot_room2,
+                'all_slot_room3':all_slot_room3,
+                'all_slot_room4':all_slot_room4,
+                'all_slot_room5':all_slot_room5,
+                'username':IN_NAME, }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

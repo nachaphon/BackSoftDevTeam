@@ -47,13 +47,14 @@
 			{% if status == 'user' %}
 			<!-- <h1>Please </h1>  -->
 			<form action="{% url 'mrbs:pick_room' 1 %}" method="post"> {% csrf_token %}
-			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
+				<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
+			</form>
 			</tr>
 			{% else %}
 			<!-- <h1>Admin your comfm login</h1>  -->
-			<!-- <form action="{% url 'mrbs:admin-page' 1 %}" method="post"> {% csrf_token %}
-			<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button> -->
-			<a href="{% url 'mrbs:admin-page' 1 %}">OK</a>
+			<form action="{% url 'mrbs:admin-page'  %}" method="post"> {% csrf_token %}
+					<button type="submit" class="btn btn-primary btn-lg btn-block login-btn" value={{username}} name='username'>OK</button>
+			</form>
 			</tr>
 			{% endif %}
 

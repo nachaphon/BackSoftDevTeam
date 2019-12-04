@@ -94,18 +94,20 @@ def check_account(request):
 
         return render(request, 'app_mrbs/login_error.html', context=None)
 
-def admin(request, day_id):
-    thisday = RoomDay.objects.filter(day = int(day_id)) #เอาทุกห้องของวันนี้มา
+def admin(request):
+    thisday = RoomDay.objects.filter(day = 1) #เอาทุกห้องของวันนี้มา
     all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
     #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
     all_slot_room2 = Timeslot.objects.filter(roomday = thisday[1])[0]
     all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
     all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
     all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
-    
+    # listofstatus = []
+    # all_room
+
     # if request.method == 'POST':
     #     day = 1
-
+    #
     #     IN_NAME = request.POST.get('username')
     #     all_timeslot = Timeslot.objects.all()
     #     all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
@@ -115,77 +117,76 @@ def admin(request, day_id):
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user1)
-
+    #
     #         if i.user2 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user2)
-
+    #
     #         if i.user3 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user3)
-            
+    #
     #         if i.user4 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user4)
-
+    #
     #         if i.user5 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user5)
-
+    #
     #         if i.user6 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user6)
-
+    #
     #         if i.user7 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user7)
-
+    #
     #         if i.user8 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user8)
-
+    #
     #         if i.user9 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user9)
-
+    #
     #         if i.user10 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user10)
-
+    #
     #         if i.user11 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user11)
-
+    #
     #         if i.user12 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user12)
-
+    #
     #         if i.user13 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user13)
-
+    #
     #         if i.user14 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user14)
-
+    #
     #         if i.user15 == 'none':
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user15)
-
     #         if i.user16 == 'none':
     #             listofstatus.append('empty')
     #         else:
@@ -194,8 +195,6 @@ def admin(request, day_id):
 
     context = {
         # 'username':IN_NAME ,
-        # 'listofstatus':listofstatus ,
-        # 'all_room':all_room ,
         'all_slot_room1':all_slot_room1,
         'all_slot_room2':all_slot_room2,
         'all_slot_room3':all_slot_room3,
@@ -203,6 +202,38 @@ def admin(request, day_id):
         'all_slot_room5':all_slot_room5,
     }
     return render(request, 'app_mrbs/admin_page.html', context)
+def admin_not1(request, day_id):
+    # if day_id == '%2F1':
+    #     day_id = 1
+    # if day_id == '%2F2':
+    #     day_id = 2
+    # if day_id == '%2F3':
+    #     day_id = 3
+    # if day_id == '%2F4':
+    #     day_id = 4
+    # if day_id == '%2F5':
+    #     day_id = 5
+    # if day_id == '%2F6':
+    #     day_id = 6
+    # if day_id == '%2F7':
+    #     day_id = 7
+    thisday = RoomDay.objects.filter(day = day_id) #เอาทุกห้องของวันนี้มา
+    all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
+    #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
+    all_slot_room2 = Timeslot.objects.filter(roomday = thisday[1])[0]
+    all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
+    all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
+    all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
+    context = {
+                'all_slot_room1':all_slot_room1,
+                'all_slot_room2':all_slot_room2,
+                'all_slot_room3':all_slot_room3,
+                'all_slot_room4':all_slot_room4,
+                'all_slot_room5':all_slot_room5,
+                'day_id':day_id+3 ,
+
+    }
+    return render(request, 'app_mrbs/admin_not1.html',context)
 
 def user(request):
     if request.method == 'POST':
@@ -238,7 +269,7 @@ def sort_room(request):
             #     slot_length = (time_length_hr*2) + time_length_min
 
             all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
-            
+
             result = []
             result_room = []
             result_slot = []
@@ -296,7 +327,7 @@ def sort_room(request):
                     'result':result,
                     'time_length':time_length_hr ,
                     'username':IN_NAME ,
-                   
+
                     }
 
             return render(request, 'app_mrbs/sort.html', context_sort)
@@ -323,7 +354,7 @@ def booking_sort_room(request):
             else:
                 listofslot.append(int(strofslot))
                 strofslot = ''
-            
+
         # if '1' in listofslot:
         #     preRoomSelect.status1 = 'full'
         #     preRoomSelect.user1 = user_name
@@ -334,7 +365,7 @@ def booking_sort_room(request):
                 if 1 in listofslot:
                     i.status1 = 'full'
                     i.user1 = username
-    
+
                 if 2 in listofslot:
                     i.status2 = 'full'
                     i.user2 = username
@@ -342,63 +373,63 @@ def booking_sort_room(request):
                 if 3 in listofslot:
                     i.status3 = 'full'
                     i.user3 = username
-       
+
                 if 4 in listofslot:
                     i.status4 = 'full'
                     i.user4 = username
-       
+
                 if 5 in listofslot:
                     i.status5 = 'full'
                     i.user5 = username
-     
+
                 if 6 in listofslot:
                     i.status6 = 'full'
                     i.user6 = username
-    
+
                 if 7 in listofslot:
                     i.status7 = 'full'
                     i.user7 = username
-           
+
                 if 8 in listofslot:
                     i.status8 = 'full'
                     i.user8 = username
-             
+
                 if 9 in listofslot:
                     i.status9 = 'full'
                     i.user9 = username
-           
+
                 if 10 in listofslot:
                     i.status10 = 'full'
                     i.user10 = username
-              
+
                 if 11 in listofslot:
                     i.status11 = 'full'
                     i.user11 = username
-             
+
                 if 12 in listofslot:
                     i.status12 = 'full'
                     i.user12 = username
-               
+
                 if 13 in listofslot:
                     i.status13 = 'full'
                     i.user13 = username
-                   
+
                 if 14 in listofslot:
                     i.status14 = 'full'
                     i.user14 = username
-                
+
                 if 15 in listofslot:
                     i.status15 = 'full'
                     i.user15 = username
-                
+
                 if 16 in listofslot:
                     i.status16 = 'full'
                     i.user16 = username
                 i.save()
-                
-                
-               
-            
+
+
+
+
 
         context = {
             'slot': slot ,
@@ -811,9 +842,8 @@ def pick_room(request, day_id):
                 'all_slot_room3':all_slot_room3,
                 'all_slot_room4':all_slot_room4,
                 'all_slot_room5':all_slot_room5,
-                'username':user_name, 
+                'username':user_name,
                 'day_id':day_id+3 ,
-                'Sortform':Sortform
                 }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

@@ -187,7 +187,6 @@ def admin(request):
     #             listofstatus.append('empty')
     #         else:
     #             listofstatus.append(i.user15)
-    #
     #         if i.user16 == 'none':
     #             listofstatus.append('empty')
     #         else:
@@ -845,7 +844,6 @@ def pick_room(request, day_id):
                 'all_slot_room5':all_slot_room5,
                 'username':user_name,
                 'day_id':day_id+3 ,
-
                 }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)

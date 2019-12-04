@@ -105,10 +105,11 @@ def admin(request):
     # listofstatus = []
     # all_room
 
-    # if request.method == 'POST':
+    if request.method == 'POST':
     #     day = 1
     #
-    #     IN_NAME = request.POST.get('username')
+        IN_NAME = request.POST.get('username')
+        request.session['username'] = IN_NAME
     #     all_timeslot = Timeslot.objects.all()
     #     all_room = Timeslot.objects.all()[(day*5)-5:(day*5)]
     #     listofstatus = []
@@ -200,6 +201,7 @@ def admin(request):
         'all_slot_room3':all_slot_room3,
         'all_slot_room4':all_slot_room4,
         'all_slot_room5':all_slot_room5,
+        'username':IN_NAME,
     }
     return render(request, 'app_mrbs/admin_page.html', context)
 def admin_not1(request, day_id):
@@ -217,6 +219,7 @@ def admin_not1(request, day_id):
     #     day_id = 6
     # if day_id == '%2F7':
     #     day_id = 7
+    username = request.session.get('username')
     thisday = RoomDay.objects.filter(day = day_id) #เอาทุกห้องของวันนี้มา
     all_slot_room1 = Timeslot.objects.filter(roomday = thisday[0])[0] #เอาslotของห้องที่ 1 ของวันนี้มา
     #ต้องใส้ [0] ตรงท้ายสุดด้วย เพราะ เราเรียก timeslot ตัวเเรกของ room นั้นออกมา
@@ -224,6 +227,7 @@ def admin_not1(request, day_id):
     all_slot_room3 = Timeslot.objects.filter(roomday = thisday[2])[0]
     all_slot_room4 = Timeslot.objects.filter(roomday = thisday[3])[0]
     all_slot_room5 = Timeslot.objects.filter(roomday = thisday[4])[0]
+    request.session['username'] = username
     context = {
                 'all_slot_room1':all_slot_room1,
                 'all_slot_room2':all_slot_room2,
@@ -231,6 +235,7 @@ def admin_not1(request, day_id):
                 'all_slot_room4':all_slot_room4,
                 'all_slot_room5':all_slot_room5,
                 'day_id':day_id+3 ,
+                'username':username
 
     }
     return render(request, 'app_mrbs/admin_not1.html',context)

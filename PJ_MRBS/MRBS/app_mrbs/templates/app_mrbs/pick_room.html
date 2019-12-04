@@ -205,10 +205,15 @@
       {% csrf_token %}
       <input type="submit" class="btn btn-success btn-sm" value={{all_slot_room1.status1}} name = 1>
       
+    {% elif all_slot_room1.user1 == username %}
+      <form action="" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 81>
+
      {% else %}
      <form action="" method="post">
        {% csrf_token %}
-       <input type="submit" class="btn btn-danger btn-sm" value="cancel" name = 81>
+       <input type="submit" class="btn btn-danger btn-sm" value="full" name = 'none'>
      </form> {% endif %}
 		</td><td>
       {% if all_slot_room2.status1 == "empty" %}

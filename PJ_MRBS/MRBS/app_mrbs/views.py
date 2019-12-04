@@ -844,6 +844,7 @@ def pick_room(request, day_id):
                 'all_slot_room5':all_slot_room5,
                 'username':user_name,
                 'day_id':day_id+3 ,
+                'Sortform':Sortform ,
                 }
                 # 'status1':status1}
     return render(request, 'app_mrbs/pick_room.html', context)
